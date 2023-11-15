@@ -6,6 +6,10 @@ html {
     padding: 0;
     background-color: rebeccapurple;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
 .Titulo{
     text-align: center;
     background-color: #ccc;
@@ -46,4 +50,38 @@ html {
     .codigo-responsivo {
         width: 100%;
     }
+}
+
+/*Tablas*/
+/* Tabla */
+.tabla-bonita {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+
+    /* Bordes redondeados */
+    border-radius: 5px;
+
+    /* Margen superior e inferior */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Cabecera de la tabla */
+.tabla-bonita thead tr {
+    background-color: #ccc;
+}
+
+/* Celda de la cabecera */
+.tabla-bonita thead th {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Celda del cuerpo de la tabla */
+.tabla-bonita tbody td {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
 }

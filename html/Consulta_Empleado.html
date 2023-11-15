@@ -94,85 +94,51 @@
     </nav>
     <div class="columna-central">
         <div class="contenedor-sombreado">
-            <div style="justify-content: center; width: 100%; display: flex;"><section class="Titulo"><h1>Agregar empledo</h1></section></div>
-            <form class="row g-3 needs-validation" novalidate>
-                <div class="col-md-12 position-relative">
-                    <label for="validationTooltip01" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="validationTooltip01" placeholder="Ejemplo: Marco Antonio Perez Perez" required>
-                    <div class="valid-tooltip">
-                        Bien!
-                    </div>
-                    <div class="invalid-tooltip">
-                        Falta tu nombre
-                    </div>
-                </div>
-                <div class="col-md-12 position-relative">
-                    <label for="validationTooltip02" class="form-label">NSS:</label>
-                    <input type="number" class="form-control" id="validationTooltip02" placeholder="Ejemplo:12345678910" required>
-                    <div class="valid-tooltip">
-                        Recuerda que son 11 numeros!
-                    </div>
-                    <div class="invalid-tooltip">
-                        Falta tu NSS
-                    </div>
-                </div>
-                <div class="col-md-12 position-relative">
-                    <label for="validationTooltip02" class="form-label">Edad:</label>
-                    <input type="number" class="form-control" id="validationTooltip02" placeholder="Ejemplo:22" required>
-                    <div class="valid-tooltip">
-                        Buena edad!
-                    </div>
-                    <div class="invalid-tooltip">
-                        Falta tu edad
-                    </div>
-                </div>
-                <div class="col-md-12 position-relative">
-                    <label for="validationTooltip02" class="form-label">RFC:</label>
-                    <input type="Text" class="form-control" id="validationTooltip02" placeholder="Ejemplo:QUMA470929F37" required>
-                    <div class="valid-tooltip">
-                        OK!
-                    </div>
-                    <div class="invalid-tooltip">
-                        Falta tu RFC
-                    </div>
-                </div>
-                <div class="col-md-12 position-relative">
-                    <label for="validationTooltip02" class="form-label">
-                        Contraseña:</label>
-                    <input type="number" class="form-control" id="validationTooltip02" placeholder="Ejemplo:Tac0s_D3_p0llo" required>
-                    <div class="valid-tooltip">
-                        Recuerda que son 11 numeros!
-                    </div>
-                    <div class="invalid-tooltip">
-                        Falta tu nss
-                    </div>
-                </div>
-                <div class="col-12">
-                    <button class="btn btn-primary" type="submit">Guardar</button>
-                </div>
-            </form>
+            <div style="justify-content: center; width: 100%; display: flex;">
+                <section class="Titulo">
+                    <h1>Consultar empledo</h1>
+                </section>
+            </div>
+            <br/>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto"><label for="nss-empleado">Buscar:</label></div>
+                <div class="col-5"><input type="text" class="form-control" id="nss-empleado" placeholder="Introducir NSS de empleado"></div>
+            </div>
+        <table class="tabla-bonita">
+            <thead>
+                <tr>
+                    <th>NSS</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>RFC</th>
+                    <th>Contraseña</th>
+                    <th>Estado</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Celda 1</td>
+                    <td>Celda 2</td>
+                    <td>Celda 3</td>
+                    <td>Celda 4</td>
+                    <td>Celda 5</td>
+                    <td>Celda 6</td>
+                    <td>Celda 7</td>
+                </tr>
+                <tr>
+                    <td>Celda 1</td>
+                    <td>Celda 2</td>
+                    <td>Celda 3</td>
+                    <td>Celda 4</td>
+                    <td>Celda 5</td>
+                    <td>Celda 6</td>
+                    <td>Celda 7</td>
+                </tr>
+            </tbody>
+        </table>
         </div>
     </div>
 </body>
-<script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (() => {
-            'use strict'
-
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            const forms = document.querySelectorAll('.needs-validation')
-
-            // Loop over them and prevent submission
-            Array.from(forms).forEach(form => {
-                form.addEventListener('submit', event => {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    }
-
-                    form.classList.add('was-validated')
-                }, false)
-            })
-        })()
-</script>
+<script src="../js/ComplementoBss.js"></script>
 </html>
