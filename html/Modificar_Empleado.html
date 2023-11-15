@@ -94,49 +94,79 @@
     </nav>
     <div class="columna-central">
         <div class="contenedor-sombreado">
-            <div style="justify-content: center; width: 100%; display: flex;">
-                <section class="Titulo">
-                    <h1>Consultar empledo</h1>
-                </section>
-            </div>
-            <br/>
-            <div class="row g-3 align-items-center">
-                <div class="col-auto"><label for="nss-empleado">Buscar:</label></div>
-                <div class="col-5"><input type="text" class="form-control" id="nss-empleado" placeholder="Introducir NSS de empleado"></div>
-            </div>
-        <table class="tabla-bonita">
-            <thead>
-                <tr>
-                    <th>NSS</th>
-                    <th>Nombre</th>
-                    <th>Edad</th>
-                    <th>RFC</th>
-                    <th>Contraseña</th>
-                    <th>Estado</th>
-                    <th>Accion</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td><button class="btn btn-dark" id ="Modificar">Modificar</button></td>
-                </tr>
-                <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td><button class="btn btn-dark" id="Modificar">Modificar</button></td>
-                </tr>
-            </tbody>
-        </table>
+            <div style="justify-content: center; width: 100%; display: flex;"><section class="Titulo"><h1>Modificar empledo</h1></section></div>
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="col-md-12 position-relative">
+                    <label for="validationTooltip01" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="validationTooltip01" placeholder="Ejemplo: Marco Antonio Perez Perez" required>
+                    <div class="valid-tooltip">
+                        Bien!
+                    </div>
+                    <div class="invalid-tooltip">
+                        Falta tu nombre
+                    </div>
+                </div>
+                <div class="col-md-12 position-relative">
+                    <label for="validationTooltip02" class="form-label">NSS:</label>
+                    <input type="number" class="form-control" id="validationTooltip02" placeholder="Ejemplo:12345678910" min="10000000000" max="99999999999" required>
+                    <div class="valid-tooltip">
+                        Recuerda que son 11 numeros!
+                    </div>
+                    <div class="invalid-tooltip">
+                        Falta tu NSS o numero incorrecto
+                    </div>
+                </div>
+                <div class="col-md-12 position-relative">
+                    <label for="validationTooltip02" class="form-label">Edad:</label>
+                    <input type="number" class="form-control" id="validationTooltip02" placeholder="Ejemplo:22" min="18" max="150"required>
+                    <div class="valid-tooltip">
+                        Buena edad!
+                    </div>
+                    <div class="invalid-tooltip">
+                        Falta tu edad o edad incorrecta
+                    </div>
+                </div>
+                <div class="col-md-12 position-relative">
+                    <label for="validationTooltip02" class="form-label">RFC:</label>
+                    <input type="Text" class="form-control" id="validationTooltip02" placeholder="Ejemplo:QUMA470929F37" required>
+                    <div class="valid-tooltip">
+                        OK!
+                    </div>
+                    <div class="invalid-tooltip">
+                        Falta tu RFC
+                    </div>
+                </div>
+                <div class="col-md-12 position-relative">
+                <label for="Radiobutons" class="form-label">Estado:</label>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                    <label class="form-check-label" for="inlineRadio1">Activo</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Inactivo</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                    <label class="form-check-label" for="inlineRadio3">Incapasitado</label>
+                </div> 
+                </div>
+                <div class="col-md-12 position-relative">
+                    <label for="validationTooltip02" class="form-label">
+                        Contraseña:</label>
+                    <input type="password" class="form-control" id="validationTooltip02" placeholder="Ejemplo:Tac0s_D3_p0llo" required>
+                    <div class="valid-tooltip">
+                        OK!
+                    </div>
+                    <div class="invalid-tooltip">
+                        Falta tu contraseña
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Guardar</button>
+                    <button class="btn btn-bd-light" type="button">Cancelar</button>
+                </div>
+            </form>
         </div>
     </div>
 </body>
