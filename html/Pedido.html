@@ -139,30 +139,41 @@
                             <td>1</td>
                             <td>Juan</td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>María</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Pedro</td>
-                        </tr>
                     </tbody>
                 </table>
-                <h2>Juegos</h2>
                 <br />
                 <form action="procesar-busqueda-juegos.php" method="post">
                     <div class="row mb-3">
-                    <label for="inputEmail3" class="col-sm-1 col-form-label">Id juego:</label>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control" id="Juego">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Fecha de entrega:</label>
+                        <div class="col-sm-1">
+                            <input type="text" class="form-control" id="id_Empleado">
+                        </div>
                     </div>
+
+                </form>
+                <br />
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Id de franquicia:</label>
                     <div class="col-sm-1">
-                        <button type="submit" class="btn btn-primary">Buscar</button>
+                        <input type="text" class="form-control" id="id_Empleado">
                     </div>
                 </div>
-                    
-                </form>
+                <table class="tabla-bonita">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>--------</td>
+                            <td>--------</td>
+                            <td><button type="button" class="btn btn-primary">Añadir</button></td>
+                        </tr>
+                    </tbody>
+                </table>
                 <br />
                 <h2>Resultados de la búsqueda</h2>
                 <table class="tabla-bonita">
@@ -194,9 +205,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
-                            <th>Precio C/U</th>
                             <th>Cantidad</th>
-                            <th>Importe</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -204,40 +213,13 @@
                             <td>1</td>
                             <td>Super Mario Odyssey</td>
                             <td>100</td>
-                            <td>2</td>
-                            <td>200</td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>The Legend of Zelda: Breath of the Wild</td>
                             <td>100</td>
-                            <td>2</td>
-                            <td>200</td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Sub Total:</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>IVA:</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Total:</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
                             <td></td>
                             <td><button class="btn btn-bd-light" type="button">Cancelar</button></td>
                             <td><button class="btn btn-primary" type="submit">Guardar</button></td>
