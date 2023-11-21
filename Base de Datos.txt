@@ -57,7 +57,7 @@ CREATE TABLE Compras(
 	
 	PRIMARY KEY(folioCompra),
 	FOREIGN KEY(idProveedor) REFERENCES Proveedores(idProveedor),
-	FOREIGN KEY(nss) REFERENCES Empleados(nss)
+	FOREIGN KEY(nss) Empleados(nss)
 );
 
 CREATE TABLE JuegosCompra(
