@@ -107,16 +107,26 @@
                 </section>
             </div>
             <br />
-            <form action="procesar-venta.php" method="post">
-
-                <label for="fecha">Fecha:</label>
-                <input type="date" id="fecha" name="fecha" readonly>
-
-                <label for="folio-venta">Folio de venta:</label>
-                <input type="number" id="folio-venta" name="folio-venta" readonly>
+            <form action="procesar-venta.php" method="post" class="row g-3 needs-validation" novalidate>
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">Fecha:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="fecha" readonly>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">Folio venta:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="folio" readonly>
+                    </div>
+                </div>
                 <br /><br />
-                <label for="id-empleado">ID de empleado:</label>
-                <input>
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Id del empleado:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="id_Empleado">
+                    </div>
+                </div>
                 <table class="tabla-bonita">
                     <thead>
                         <tr>
@@ -142,9 +152,16 @@
                 <h2>Juegos</h2>
                 <br />
                 <form action="procesar-busqueda-juegos.php" method="post">
-                    <label for="id-juego">ID de juego:</label>
-                    <input type="number" id="id-juego" name="id-juego" placeholder="Ingrese el ID del juego">
-                    <button type="submit" class="btn btn-primary">Buscar</button>
+                    <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">Id juego:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="Juego">
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </div>
+                </div>
+                    
                 </form>
                 <br />
                 <h2>Resultados de la búsqueda</h2>
