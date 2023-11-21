@@ -4,7 +4,7 @@ INSERT INTO Empleados (nss, nombre, edad, rfc, estado, contraseña)
 VALUES
 ('16112023910', 'Miguel Guzman', '24' , 'GUPM990224HJ3', 'Activo', 'enchilada_De_yakult13'),
 ('27191204922', 'Jorge Sanchez', '30', 'SALJ930814LZ2', 'Activo', 'superman123'),
-('01045198831', 'Ramon Perez', '27', 'PETR951208RE4', 'Activo', 'M4rt1N3z'),
+('11045198831', 'Ramon Perez', '27', 'PETR951208RE4', 'Activo', 'M4rt1N3z'),
 ('38170499131', 'Juan Ramirez', '25', 'RAPJ980523KF6', 'Incapacidad', '0-rd3r-66'),
 ('66131894500', 'Paulo Martinez', '32', 'MAAP911010WO3', 'Inactivo', 'Jkl-44-rt');
 
@@ -22,21 +22,21 @@ VALUES
 ('2', 'Blizzard Entertainment', 'Estados Unidos', '5083924761', 'business@blizzard.com'), 
 ('3', 'Activision', 'Estados Unidos', '5300981483', 'contact@activision.com'),
 ('4', 'Mojang Studios', 'Suecia', '4631547702', 'sales@mojang.com'),
-('5', 'Electronic Arts', 'Estados Unidos', '5515933862', 'business@EA.com);
+('5', 'Electronic Arts', 'Estados Unidos', '5515933862', 'business@EA.com');
 
 INSERT INTO Franquicias(idFranquicia, nombre, telefono, correo, direccion)
 VALUES
-('1', 'GameStop', '5913840924', 'busines@gamestop.com', 'Evergreen Avenue #14'),
-('2', 'Game Planet', '5139528500', 'compras@gameplanet.com', 'Rafael Sanzio #150'),
-('3', 'Gamers', '5029448317', 'compras@gamers.com', 'Lopez Mateos Norte #644'),
-('4', 'Steam', '522010094', 'business@steam.com', 'E Fowler Avenue #2200'),
-('5', 'BattleNet', '5130078892', 'business@battlenet.com', 'Orange Blossom street #8001');
+('1', 'GameStop', '5913840924', 'busines@gamestop.com', 'Evergreen Avenue 14'),
+('2', 'Game Planet', '5139528500', 'compras@gameplanet.com', 'Rafael Sanzio 150'),
+('3', 'Gamers', '5029448317', 'compras@gamers.com', 'Lopez Mateos Norte 644'),
+('4', 'Steam', '5220100944', 'business@steam.com', 'E Fowler Avenue 2200'),
+('5', 'BattleNet', '5130078892', 'business@battlenet.com', 'Orange Blossom street 8001');
 
 INSERT INTO Compras(folioCompra, idProveedor, fecha, nss, estado)
 VALUES
-('1', '3', '2023/01/18', '01045198831', 'completado'),
+('1', '3', '2023/01/18', '11045198831', 'completado'),
 ('2', '1', '2023/01/29', '66131894500', 'completado'),
-('3', '4', '2023/02/15', '16112023910', 'commpletado'),
+('3', '4', '2023/02/15', '16112023910', 'completado'),
 ('4', '5', '2023/03/23', '27191204922', 'completado'),
 ('5', '3', '2023/04/01', '38170499131', 'en proceso');
 
@@ -52,7 +52,7 @@ INSERT INTO Pedidos(folioPedido, idFranquicia, nss, fecha, fechaFinal, estado)
 VALUES
 ('1', '2', '16112023910', '2023/02/04', '2023/02/18', 'finalizado'),
 ('2', '4', '27191204922', '2023/02/13', '2023/03/03', 'finalizado'),
-('3', '1', '01045198831', '2023/02/26', '2023/03/07', 'finalizado'),
+('3', '1', '11045198831', '2023/02/26', '2023/03/07', 'finalizado'),
 ('4', '5', '38170499131', '2023/03/02', '2023/03/20', 'finalizado'),
 ('5', '3', '66131894500', '2023/03/08', '2023/03/24', 'finalizado');
 
@@ -69,7 +69,7 @@ VALUES
 ('1', '16112023910', '2023/02/18'),
 ('2', '27191204922', '2023/03/03'),
 ('3', '38170499131', '2023/03/20'),
-('4', '01045198831', '2023/03/21'),
+('4', '11045198831', '2023/03/21'),
 ('5', '66131894500', '2023/04/01');
 
 INSERT INTO JuegosVenta(folioVenta, idJuego, cantidad)
