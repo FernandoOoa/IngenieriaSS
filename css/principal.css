@@ -27,6 +27,7 @@ input[type="number"]::-webkit-outer-spin-button {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    padding: 10px;
     height: 100%;
     /* Toma el 100% de la altura de la página */
 }
@@ -36,14 +37,10 @@ input[type="number"]::-webkit-outer-spin-button {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 8px;
-    width: 80%;
+    width: 85%;
 }
 
-.codigo-responsivo {
-    overflow: auto;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+
 
 /* Media query para ajustar el ancho del código en pantallas más pequeñas (ejemplo: tabletas y móviles) */
 @media (max-width: 768px) {
