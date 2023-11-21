@@ -2,11 +2,11 @@ USE tienda;
 
 INSERT INTO Empleados (id, nss, nombre, edad, rfc, estado, contraseña)
 VALUES
-('1', '16112023910', 'Miguel Guzman', '24' , 'GUPM990224HJ3', 'Activo', 'enchilada_De_yakult13'),
-('2', '27191204922', 'Jorge Sanchez', '30', 'SALJ930814LZ2', 'Activo', 'superman123'),
-('3', '01045198831', 'Ramon Perez', '27', 'PETR951208RE4', 'Activo', 'M4rt1N3z'),
-('4', '38170499131', 'Juan Ramirez', '25', 'RAPJ980523KF6', 'Incapacidad', '0-rd3r-66'),
-('5', '66131894500', 'Paulo Martinez', '32', 'MAAP911010WO3', 'Inactivo', 'Jkl-44-rt');
+('16112023910', 'Miguel Guzman', '24' , 'GUPM990224HJ3', 'Activo', 'enchilada_De_yakult13'),
+('27191204922', 'Jorge Sanchez', '30', 'SALJ930814LZ2', 'Activo', 'superman123'),
+('01045198831', 'Ramon Perez', '27', 'PETR951208RE4', 'Activo', 'M4rt1N3z'),
+('38170499131', 'Juan Ramirez', '25', 'RAPJ980523KF6', 'Incapacidad', '0-rd3r-66'),
+('66131894500', 'Paulo Martinez', '32', 'MAAP911010WO3', 'Inactivo', 'Jkl-44-rt');
 
 INSERT INTO Juegos (idJuego, idProveedor, nombre, precioCompra, precioVenta, clasificacion, tipo, estado, cantidad)
 VALUES
