@@ -1,6 +1,6 @@
 USE tienda;
 
-INSERT INTO Empleados (id, nss, nombre, edad, rfc, estado, contraseña)
+INSERT INTO Empleados (nss, nombre, edad, rfc, estado, contraseña)
 VALUES
 ('16112023910', 'Miguel Guzman', '24' , 'GUPM990224HJ3', 'Activo', 'enchilada_De_yakult13'),
 ('27191204922', 'Jorge Sanchez', '30', 'SALJ930814LZ2', 'Activo', 'superman123'),
