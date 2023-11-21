@@ -3,7 +3,6 @@ CREATE DATABASE tienda;
 USE tienda;
 
 CREATE TABLE Empleados(
-	id int NOT NULL,
 	nss int NOT NULL,
 	nombre varchar(30) NOT NULL,
 	edad int,
@@ -11,7 +10,7 @@ CREATE TABLE Empleados(
 	estado varchar(11) NOT NULL,
 	contraseña varchar(30) NOT NULL,
 
-	PRIMARY KEY (ID)
+	PRIMARY KEY (nss)
 );
 
 CREATE TABLE Juegos(
@@ -79,7 +78,7 @@ CREATE TABLE Pedidos(
 
 	PRIMARY KEY(folioPedido),
 	FOREIGN KEY(idFranquicia) REFERENCES Franquicias(idFranquicia),
-	FOREIGN KEY(nss) REFERENCES Franquicias Empleados(nss)
+	FOREIGN KEY(nss) REFERENCES Empleados(nss)
 );
 
 CREATE TABLE JuegosPedido(
