@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="../css/principal.css">
+<title>JuegosCom</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">JuegosCOM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Empleados
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Empleado.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="Modificar_Empleado.html">Modificar</a></li>
+                            <li><a class="dropdown-item" href="Consulta_Empleado.html">Consultar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Juegos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Juego.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="Modificar_Juego.html">Modificar</a></li>
+                            <li><a class="dropdown-item" href="Consulta_Juego.html">Consultar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Pedidos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Agregar</a></li>
+                            <li><a class="dropdown-item" href="#">Actualizar</a></li>
+                            <li><a class="dropdown-item" href="#">Consultar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Proveedor
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Agregar</a></li>
+                            <li><a class="dropdown-item" href="#">Modificar</a></li>
+                            <li><a class="dropdown-item" href="#">Consultar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Franquicias
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Agregar</a></li>
+                            <li><a class="dropdown-item" href="#">Modificar</a></li>
+                            <li><a class="dropdown-item" href="#">Consultar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Ventas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Agregar</a></li>
+                            <li><a class="dropdown-item" href="#">Consultar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Compras
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Agregar</a></li>
+                            <li><a class="dropdown-item" href="#">Consultar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="columna-central">
+        <div class="contenedor-sombreado">
+            <div style="justify-content: center; width: 100%; display: flex;">
+                <section class="Titulo">
+                    <h1>Agregar Pedido</h1>
+                </section>
+            </div>
+            <br />
+            <form action="procesar-venta.php" method="post" class="row g-3 needs-validation" novalidate>
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">Fecha:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="fecha" readonly>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">Folio venta:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="folio" readonly>
+                    </div>
+                </div>
+                <br /><br />
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Id del empleado:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="id_Empleado">
+                    </div>
+                </div>
+                <table class="tabla-bonita">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Juan</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>María</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Pedro</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Juegos</h2>
+                <br />
+                <form action="procesar-busqueda-juegos.php" method="post">
+                    <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-1 col-form-label">Id juego:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="Juego">
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </div>
+                </div>
+                    
+                </form>
+                <br />
+                <h2>Resultados de la búsqueda</h2>
+                <table class="tabla-bonita">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Clasificacion</th>
+                            <th>Precio C/U</th>
+                            <th>Inventario</th>
+                            <th>Cantidad</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <td>2</td>
+                        <td>Halo</td>
+                        <td>RPG</td>
+                        <td>5000</td>
+                        <td>50</td>
+                        <td><input type="number" name="cantidad-1" value="3"></td>
+                        <td><button type="button" class="btn btn-primary">Añadir</button></td>
+                    </tbody>
+                </table>
+
+                <h2>Carrito</h2>
+                <table class="tabla-bonita">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Precio C/U</th>
+                            <th>Cantidad</th>
+                            <th>Importe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Super Mario Odyssey</td>
+                            <td>100</td>
+                            <td>2</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>The Legend of Zelda: Breath of the Wild</td>
+                            <td>100</td>
+                            <td>2</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Sub Total:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>IVA:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Total:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><button class="btn btn-bd-light" type="button">Cancelar</button></td>
+                            <td><button class="btn btn-primary" type="submit">Guardar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="../js/ComplementoBss.js"></script>
+
+</html>
