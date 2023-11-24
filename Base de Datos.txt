@@ -14,7 +14,7 @@ CREATE TABLE Empleados(
 );
 
 CREATE TABLE Juegos(
-	idJuego int NOT NULL,
+	idJuego int NOT NULL AUTO_INCREMENT,
 	idProveedor int NOT NULL,
 	nombre varchar(40) NOT NULL,
 	precioCompra float NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE Juegos(
 );
 
 CREATE TABLE Proveedores(
-	idProveedor int NOT NULL,
+	idProveedor int NOT NULL AUTO_INCREMENT,
 	nombre varchar(30) NOT NULL,
 	pais varchar(25),
 	telefono bigint,
@@ -38,7 +38,7 @@ CREATE TABLE Proveedores(
 );
 
 CREATE TABLE Franquicias(
-	idFranquicia int NOT NULL,
+	idFranquicia int NOT NULL AUTO_INCREMENT,
 	nombre varchar(30) NOT NULL,
 	telefono bigint,
 	correo varchar(50),
@@ -48,7 +48,7 @@ CREATE TABLE Franquicias(
 );
 
 CREATE TABLE Compras(
-	folioCompra int NOT NULL,
+	folioCompra int NOT NULL AUTO_INCREMENT,
 	idProveedor int NOT NULL,
 	fecha date NOT NULL,
 	nss bigint NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE JuegosCompra(
 );
 
 CREATE TABLE Pedidos(
-	folioPedido int NOT NULL,
+	folioPedido int NOT NULL AUTO_INCREMENT,
 	idFranquicia int NOT NULL,
 	nss bigint NOT NULL,
 	fecha date NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE JuegosPedido(
 );
 
 CREATE TABLE Ventas(
-	folioVenta int NOT NULL,
+	folioVenta int NOT NULL AUTO_INCREMENT,
 	nss bigint NOT NULL,
 	fecha date NOT NULL,
 
