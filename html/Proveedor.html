@@ -18,7 +18,7 @@
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse" name="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -100,10 +100,10 @@
                     <h1>Agregar Proveedor</h1>
                 </section>
             </div>
-            <form class="row g-3 needs-validation" novalidate>
+            <form class="row g-3 needs-validation" action="../php/Proveedor.php" method="post" novalidate>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip01" class="form-label">Nombre del proveedor:</label>
-                    <input type="text" class="form-control" id="validationTooltip01" placeholder="Ejemplo: Juegos locos"
+                    <input type="text" class="form-control" name="nombre_proveedor" placeholder="Ejemplo: Juegos locos"
                         required>
                     <div class="valid-tooltip">
                         Bien!
@@ -114,7 +114,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip01" class="form-label">Pais origen:</label>
-                    <input type="text" class="form-control" id="validationTooltip01"
+                    <input type="text" class="form-control" name="pais_proveedor"
                         placeholder="Ejemplo: México" required>
                     <div class="valid-tooltip">
                         Bien!
@@ -125,8 +125,8 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Telefono:</label>
-                    <input type="number" class="form-control" id="validationTooltip02" placeholder="Ejemplo:1234567891"
-                        min="10000000000" max="99999999999" required>
+                    <input type="number" class="form-control" name="telefono_proveedor" placeholder="Ejemplo:1234567891"
+                        min="1000000000" max="9999999999" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -136,7 +136,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Correo(Email):</label>
-                    <input type="email" class="form-control" id="validationTooltip02" placeholder="Ejemplo:paquito@gmail.com" required>
+                    <input type="email" class="form-control" name="correo_proveedor" placeholder="Ejemplo:paquito@gmail.com" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
