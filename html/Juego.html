@@ -100,10 +100,10 @@
                     <h1>Agregar juego</h1>
                 </section>
             </div>
-            <form class="row g-3 needs-validation" novalidate>
+            <form class="row g-3 needs-validation" action="../php/Juego.php" method="post" novalidate>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip01" class="form-label">Id proveedor:</label>
-                    <input type="text" class="form-control" id="validationTooltip01" placeholder="Ver como poner esto"
+                    <input type="text" class="form-control" name="proveedor_juego" placeholder="Ver como poner esto"
                         required>
                     <div class="valid-tooltip">
                         Bien!
@@ -114,8 +114,8 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" id="validationTooltip02" placeholder="Ejemplo:Halo 3"
-                        min="10000000000" max="99999999999" required>
+                    <input type="text" class="form-control" name="nombre_juego" placeholder="Ejemplo:Halo 3"
+                        min="0" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -125,8 +125,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Precio compra:</label>
-                    <input type="number" class="form-control" id="validationTooltip0
-                    2" placeholder="Ejemplo:220" required>
+                    <input type="number" class="form-control" name="preciocompra_juego" placeholder="Ejemplo:220" min="0" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -136,8 +135,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Precio venta:</label>
-                    <input type="number" class="form-control" id="validationTooltip0
-                                    2" placeholder="Ejemplo:220" required>
+                    <input type="number" class="form-control" name="precioventa_juego" placeholder="Ejemplo:220" min="0" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -147,8 +145,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Clasificacion:</label>
-                    <input type="Text" class="form-control" id="validationTooltip02"
-                        placeholder="Ejemplo:Mayores de edad" required>
+                    <input type="Text" class="form-control" name="clasificacion_juego" placeholder="Ejemplo:Mayores de edad" required>
                     <div class="valid-tooltip">
                         OK!
                     </div>
@@ -158,7 +155,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Tipo:</label>
-                    <input type="Text" class="form-control" id="validationTooltip02" placeholder="Ejemplo:RPG" required>
+                    <input type="Text" class="form-control" name="tipo_juego" placeholder="Ejemplo:RPG" required>
                     <div class="valid-tooltip">
                         OK!
                     </div>
@@ -168,7 +165,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Estado:</label>
-                    <input type="Text" class="form-control" id="validationTooltip02" placeholder="Ejemplo: Activo"
+                    <input type="Text" class="form-control" name="estado_juego" placeholder="Ejemplo: Activo"
                         required>
                     <div class="valid-tooltip">
                         OK!
@@ -179,8 +176,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Cantidad:</label>
-                    <input type="number" class="form-control" id="validationTooltip0
-                                                    2" placeholder="Ejemplo:20" required>
+                    <input type="number" class="form-control" name="cantidad_juego" placeholder="Ejemplo:20" min="0" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>

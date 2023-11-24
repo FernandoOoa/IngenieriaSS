@@ -100,10 +100,10 @@
                     <h1>Agregar Franquicia</h1>
                 </section>
             </div>
-            <form class="row g-3 needs-validation" novalidate>
+            <form class="row g-3 needs-validation" action="../php/Franquicia.php" method="post" novalidate>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip01" class="form-label">Nombre de Franquicia:</label>
-                    <input type="text" class="form-control" id="validationTooltip01" placeholder="Ejemplo: Juegos locos"
+                    <input type="text" class="form-control" name="nombre_franquicia" placeholder="Ejemplo: Juegos locos"
                         required>
                     <div class="valid-tooltip">
                         Bien!
@@ -114,7 +114,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip01" class="form-label">Nombre del gerente:</label>
-                    <input type="text" class="form-control" id="validationTooltip01"
+                    <input type="text" class="form-control" name="gerente_franquicia"
                         placeholder="Ejemplo: Marco Antonio Perez Perez" required>
                     <div class="valid-tooltip">
                         Bien!
@@ -125,8 +125,8 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Telefono:</label>
-                    <input type="number" class="form-control" id="validationTooltip02" placeholder="Ejemplo:1234567891"
-                        min="10000000000" max="99999999999" required>
+                    <input type="number" class="form-control" name="telefono_franquicia" placeholder="Ejemplo:1234567891"
+                        min="1000000000" max="9999999999" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -136,7 +136,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Correo(Email):</label>
-                    <input type="email" class="form-control" id="validationTooltip02" placeholder="Ejemplo:paquito@gmail.com" required>
+                    <input type="email" class="form-control" name="correo_franquicia" placeholder="Ejemplo:paquito@gmail.com" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -146,7 +146,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Direccion</label>:</label>
-                    <input type="Text" class="form-control" id="validationTooltip02" placeholder="Ejemplo:Guadalajara"
+                    <input type="Text" class="form-control" name="direccion_franquicia" placeholder="Ejemplo:Guadalajara"
                         required>
                     <div class="valid-tooltip">
                         OK!
