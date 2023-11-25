@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../css/principal.css">
-    <title>JuegosCom</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="../css/principal.css">
+<title>JuegosCom</title>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">JuegosCOM</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -50,8 +50,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Proveedor
                         </a>
                         <ul class="dropdown-menu">
@@ -99,46 +98,56 @@
                     <h1>Consultar empleado</h1>
                 </section>
             </div>
-            <br/>
+            <br />
             <div class="row g-3 align-items-center">
-                <div class="col-auto"><label for="nss-empleado">Buscar:</label></div>
-                <div class="col-5"><input type="text" class="form-control" id="nss-empleado" placeholder="Introducir NSS de empleado"></div>
+                <form action="" method="post">
+                    <div class="col-auto"><label for="nss-empleado">Buscar:</label></div>
+                    <div class="col-5"><input type="number" class="form-control" name="consulta" placeholder="Introducir NSS de empleado" ONchange></div>
+                </form>
             </div>
-        <table class="tabla-bonita">
+            <?php
+            include "../php/Conexion.php";
+            $salida = "";
+            $query = "SELECT * FROM empleados";
+            if (isset($_POST['consulta']) || $_POST['consulta'] !=  null) {
+                $q = $_POST['consulta'];
+                $query = "SELECT * FROM empleados WHERE nss = $q";
+            }
+            $resultado = $conexion->query($query);
+            if ($resultado->num_rows > 0) {
+                $salida .= "<table class='tabla-bonita'>
             <thead>
                 <tr>
                     <th>NSS</th>
                     <th>Nombre</th>
                     <th>Edad</th>
                     <th>RFC</th>
-                    <th>Contraseña</th>
                     <th>Estado</th>
                     <th>Accion</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td><button class="btn btn-dark" id ="Modificar">Modificar</button></td>
-                </tr>
-                <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td><button class="btn btn-dark" id="Modificar">Modificar</button></td>
-                </tr>
-            </tbody>
-        </table>
+            <tbody>";
+                while ($fila = mysqli_fetch_assoc($resultado)) {
+                    $salida .= "
+        <tr>
+            <td>" . $fila['nss'] . "</td>
+            <td>" . $fila['nombre'] . "</td>
+            <td>" . $fila['edad'] . "</td>
+            <td>" . $fila['rfc'] . "</td>
+            <td>" . $fila['estado'] . "</td>
+            <td><button class='btn btn-dark' id ='Modificar'>Modificar</button></td>
+            </tr>";
+                }
+                $salida .= "</tbody></table>";
+            } else {
+                $salida .= "No hay datos :'(";
+            }
+            echo $salida;
+            $conexion->close();
+            ?>
         </div>
     </div>
 </body>
 <script src="../js/ComplementoBss.js"></script>
+
 </html>
