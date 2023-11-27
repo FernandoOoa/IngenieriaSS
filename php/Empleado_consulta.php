@@ -3,7 +3,8 @@ include "conexion.php";
 
 $salida = "";
 $query = "SELECT * FROM empleados";
-if (isset($_POST['consulta'])) {
+echo $_POST['consulta'];
+if ($_POST['consulta'] != null) {
     $q = $_POST['consulta'];
     $query = "SELECT * FROM empleados WHERE nss = $q";
 }
