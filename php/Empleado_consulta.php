@@ -30,7 +30,7 @@ if ($resultado->num_rows > 0) {
             <td>" . $fila['edad'] . "</td>
             <td>" . $fila['rfc'] . "</td>
             <td>" . $fila['estado'] . "</td>
-            <td><button class='btn btn-dark' id ='Modificar'>Modificar</button></td>
+            <td><a href='../php/Modificar_Empleado.php? id=" . $fila['nss'] . "'>Modificar</button></td>
             </tr>";
     }
     $salida .= "</tbody></table>";

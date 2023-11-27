@@ -14,8 +14,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">JuegosCOM</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -51,8 +50,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Proveedor
                         </a>
                         <ul class="dropdown-menu">
@@ -103,8 +101,7 @@
             <form class="row g-3 needs-validation" novalidate>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip01" class="form-label">Nombre del proveedor:</label>
-                    <input type="text" class="form-control" id="validationTooltip01" placeholder="Ejemplo: Juegos locos"
-                        required>
+                    <input type="text" class="form-control" id="validationTooltip01" placeholder="Ejemplo: Juegos locos" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -114,8 +111,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip01" class="form-label">Pais origen:</label>
-                    <input type="text" class="form-control" id="validationTooltip01"
-                        placeholder="Ejemplo: México" required>
+                    <input type="text" class="form-control" id="validationTooltip01" placeholder="Ejemplo: México" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -125,8 +121,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Telefono:</label>
-                    <input type="number" class="form-control" id="validationTooltip02" placeholder="Ejemplo:1234567891"
-                        min="10000000000" max="99999999999" required>
+                    <input type="number" class="form-control" id="validationTooltip02" placeholder="Ejemplo:1234567891" min="10000000000" max="99999999999" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
