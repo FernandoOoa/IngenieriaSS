@@ -1,14 +1,27 @@
-function buscar(consulta) {
-    $.ajax({
-        url:'../php/Empleado_consulta.php',
-        type: 'POST',
-        dataType:'html',
-        data:{consulta:consulta},
-    })
-    .done(function(respuesta){
-        $("#contenido").html(respuesta);
-    })
-    .fail(function(){
-        console.log("error");
-    });
+function buscar(consulta = '') {
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                document.getElementById("contenido").innerHTML = xhr.responseText;
+                console.log("hola");
+            } else {
+                console.log("Error: " + xhr.status);
+            }
+        }
+    };
+
+    var formData = new FormData();
+    formData.append('consulta', consulta);
+
+    xhr.open("POST", '../php/Empleado_consulta.php', true);
+    xhr.send(formData);
 }
+
+const miInput = document.getElementById('consulta');
+
+miInput.addEventListener('input', function() {
+    var valor = miInput.value;
+    buscar(valor);
+});

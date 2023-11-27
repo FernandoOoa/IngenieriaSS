@@ -5,7 +5,7 @@ $salida = "";
 $query = "SELECT * FROM empleados";
 if (isset($_POST['consulta'])) {
     $q = $_POST['consulta'];
-    $query = "SELECT * FROM empleados WHERE nombre = '$q'";
+    $query = "SELECT * FROM empleados WHERE nss = $q";
 }
 $resultado = $conexion->query($query);
 if ($resultado->num_rows > 0) {

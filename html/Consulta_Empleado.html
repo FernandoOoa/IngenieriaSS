@@ -98,56 +98,14 @@
                     <h1>Consultar empleado</h1>
                 </section>
             </div>
-            <br />
+            <br/>
             <div class="row g-3 align-items-center">
-                <form action="" method="post">
                     <div class="col-auto"><label for="nss-empleado">Buscar:</label></div>
-                    <div class="col-5"><input type="number" class="form-control" name="consulta" placeholder="Introducir NSS de empleado" ONchange></div>
-                </form>
+                    <div class="col-5"><input id="consulta" type="number" class="form-control" placeholder="Introducir NSS de empleado" value="10"></div>
             </div>
-            <?php
-            include "../php/Conexion.php";
-            $salida = "";
-            $query = "SELECT * FROM empleados";
-            if (isset($_POST['consulta']) || $_POST['consulta'] !=  null) {
-                $q = $_POST['consulta'];
-                $query = "SELECT * FROM empleados WHERE nss = $q";
-            }
-            $resultado = $conexion->query($query);
-            if ($resultado->num_rows > 0) {
-                $salida .= "<table class='tabla-bonita'>
-            <thead>
-                <tr>
-                    <th>NSS</th>
-                    <th>Nombre</th>
-                    <th>Edad</th>
-                    <th>RFC</th>
-                    <th>Estado</th>
-                    <th>Accion</th>
-                </tr>
-            </thead>
-            <tbody>";
-                while ($fila = mysqli_fetch_assoc($resultado)) {
-                    $salida .= "
-        <tr>
-            <td>" . $fila['nss'] . "</td>
-            <td>" . $fila['nombre'] . "</td>
-            <td>" . $fila['edad'] . "</td>
-            <td>" . $fila['rfc'] . "</td>
-            <td>" . $fila['estado'] . "</td>
-            <td><button class='btn btn-dark' id ='Modificar'>Modificar</button></td>
-            </tr>";
-                }
-                $salida .= "</tbody></table>";
-            } else {
-                $salida .= "No hay datos :'(";
-            }
-            echo $salida;
-            $conexion->close();
-            ?>
+            <div id="contenido"></div>
         </div>
     </div>
+    <script src="../js/Empleado.js"></script>
 </body>
-<script src="../js/ComplementoBss.js"></script>
-
 </html>
