@@ -6,10 +6,10 @@ $query = "SELECT * FROM empleados";
 echo $_POST['consulta'];
 if ($_POST['consulta'] != null) {
     $q = $_POST['consulta'];
-	  $query = "SELECT * FROM empleados WHERE nss LIKE '$q%'";
+    $query = "SELECT * FROM empleados WHERE nss LIKE '$q%'";
 }
 $resultado = mysqli_query($conexion, $query);
-if (mysqli_num_rows($resultado)>0) {
+if (mysqli_num_rows($resultado) > 0) {
     $salida .= "<table class='tabla-bonita'>
             <thead>
                 <tr>
@@ -30,7 +30,7 @@ if (mysqli_num_rows($resultado)>0) {
             <td>" . $fila['edad'] . "</td>
             <td>" . $fila['rfc'] . "</td>
             <td>" . $fila['estado'] . "</td>
-            <td><a href='../php/Modificar_Empleado.php? id=" . $fila['nss'] . "'>Modificar</button></td>
+            <td><a class='btn btn-bd-light' type='button' href='../php/Modificar_Empleado.php? id=" . $fila['nss'] . "'>Modificar</button></td>
             </tr>";
     }
     $salida .= "</tbody></table>";

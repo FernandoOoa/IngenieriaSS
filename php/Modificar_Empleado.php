@@ -180,7 +180,7 @@ $contrasena = $fila['contraseña'];
                 </div>
                 <div class="col-12">
                     <button class="btn btn-primary" type="submit">Guardar</button>
-                    <button class="btn btn-bd-light" type="button">Cancelar</button>
+                    <a class="btn btn-bd-light" type="button" href="../html/Consulta_Empleado.html">Cancelar</a>
                 </div>
             </form>
         </div>

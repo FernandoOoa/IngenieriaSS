@@ -6,10 +6,10 @@ $query = "SELECT * FROM proveedores";
 echo $_POST['idProveedor'];
 if ($_POST['idProveedor'] != null) {
     $q = $_POST['idProveedor'];
-	  $query = "SELECT * FROM proveedores WHERE idProveedor LIKE '$q%'";
+    $query = "SELECT * FROM proveedores WHERE idProveedor LIKE '$q%'";
 }
 $resultado = mysqli_query($conexion, $query);
-if (mysqli_num_rows($resultado)>0) {
+if (mysqli_num_rows($resultado) > 0) {
     $salida .= "<table class='tabla-bonita'>
                 <thead>
                     <tr>
@@ -30,7 +30,7 @@ if (mysqli_num_rows($resultado)>0) {
             <td>" . $fila['pais'] . "</td>
             <td>" . $fila['telefono'] . "</td>
             <td>" . $fila['correo'] . "</td>
-            <td><a href='../php/Modificar_Proveedor.php? id=" . $fila['idProveedor'] . "'>Modificar</button></td>
+            <td><a class='btn btn-bd-light' type='button' href='../php/Modificar_Proveedor.php? id=" . $fila['idProveedor'] . "'>Modificar</button></td>
             </tr>";
     }
     $salida .= "</tbody></table>";

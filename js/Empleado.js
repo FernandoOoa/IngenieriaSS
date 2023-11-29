@@ -1,3 +1,5 @@
+buscar('');
+
 function buscar(consulta = '') {
     var xhr = new XMLHttpRequest();
 
@@ -5,7 +7,6 @@ function buscar(consulta = '') {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 document.getElementById("contenido").innerHTML = xhr.responseText;
-                console.log("contenido");
             } else {
                 console.log("Error: " + xhr.status);
             }

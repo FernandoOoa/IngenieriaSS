@@ -1,3 +1,5 @@
+buscar('');
+
 function buscar(idJuego = '') {
     var xhr = new XMLHttpRequest();
 

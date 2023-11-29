@@ -1,3 +1,5 @@
+buscar('');
+
 function buscar(idProveedor = '') {
     var xhr = new XMLHttpRequest();
 
