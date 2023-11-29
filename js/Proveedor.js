@@ -1,4 +1,4 @@
-function buscar(consulta = '') {
+function buscar(idProveedor = '') {
     var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function() {
@@ -13,13 +13,13 @@ function buscar(consulta = '') {
     };
 
     var formData = new FormData();
-    formData.append('consulta', consulta);
+    formData.append('idProveedor', idProveedor);
 
-    xhr.open("POST", '../php/Empleado_consulta.php', true);
+    xhr.open("POST", '../php/Proveedor_consulta.php', true);
     xhr.send(formData);
 }
 
-const miInput = document.getElementById('consulta');
+const miInput = document.getElementById('idProveedor');
 
 miInput.addEventListener('input', function() {
     var valor = miInput.value;

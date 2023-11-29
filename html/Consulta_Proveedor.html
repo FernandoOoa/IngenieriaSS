@@ -1,4 +1,4 @@
-z<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,6 @@ z<!DOCTYPE html>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="Empleado.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Modificar_Empleado.html">Modificar</a></li>
                             <li><a class="dropdown-item" href="Consulta_Empleado.html">Consultar</a></li>
                         </ul>
                     </li>
@@ -36,7 +35,6 @@ z<!DOCTYPE html>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="Juego.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Modificar_Juego.html">Modificar</a></li>
                             <li><a class="dropdown-item" href="Consulta_Juego.html">Consultar</a></li>
                         </ul>
                     </li>
@@ -51,13 +49,11 @@ z<!DOCTYPE html>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Proveedor
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="Proveedor.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Modificar_Proveedor.html">Modificar</a></li>
                             <li><a class="dropdown-item" href="Consulta_Proveedor.html">Consultar</a></li>
                         </ul>
                     </li>
@@ -67,7 +63,6 @@ z<!DOCTYPE html>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="Franquicia.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Modificar_Franquicia.html">Modificar</a></li>
                             <li><a class="dropdown-item" href="Consulta_Franquicia.html">Consultar</a></li>
                         </ul>
                     </li>
@@ -97,45 +92,19 @@ z<!DOCTYPE html>
         <div class="contenedor-sombreado">
             <div style="justify-content: center; width: 100%; display: flex;">
                 <section class="Titulo">
-                    <h1>Consultar Franquicia</h1>
+                    <h1>Consultar Proveedor</h1>
                 </section>
             </div>
             <br />
             <div class="row g-3 align-items-center">
                 <div class="col-auto"><label for="nss-empleado">Buscar:</label></div>
-                <div class="col-5"><input type="text" class="form-control" id="nss-empleado"
+                <div class="col-5"><input type="text" class="form-control" id="idProveedor"
                         placeholder="Introducir id"></div>
             </div>
-            <table class="tabla-bonita">
-                <thead>
-                    <tr>
-                        <th>Nombre Proveedor</th>
-                        <th>Pais de origen</th>
-                        <th>Telefono</th>
-                        <th>Correo</th>
-                        <th>Accion</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Celda 1</td>
-                        <td>Celda 2</td>
-                        <td>Celda 3</td>
-                        <td>Celda 4</td>
-                        <td><button class="btn btn-dark" id="Modificar">Modificar</button></td>
-                    </tr>
-                    <tr>
-                        <td>Celda 1</td>
-                        <td>Celda 2</td>
-                        <td>Celda 3</td>
-                        <td>Celda 4</td>
-                        <td><button class="btn btn-dark" id="Modificar">Modificar</button></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div id="contenido"></div>
         </div>
     </div>
 </body>
-<script src="../js/ComplementoBss.js"></script>
+<script src="../js/Proveedor.js"></script>
 
 </html>

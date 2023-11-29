@@ -6,10 +6,10 @@ $query = "SELECT * FROM empleados";
 echo $_POST['consulta'];
 if ($_POST['consulta'] != null) {
     $q = $_POST['consulta'];
-    $query = "SELECT * FROM empleados WHERE nss = $q";
+	  $query = "SELECT * FROM empleados WHERE nss LIKE '$q%'";
 }
-$resultado = $conexion->query($query);
-if ($resultado->num_rows > 0) {
+$resultado = mysqli_query($conexion, $query);
+if (mysqli_num_rows($resultado)>0) {
     $salida .= "<table class='tabla-bonita'>
             <thead>
                 <tr>
@@ -38,4 +38,4 @@ if ($resultado->num_rows > 0) {
     $salida .= "No hay datos :'(";
 }
 echo $salida;
-$conexion->close();
+mysqli_close($conexion);

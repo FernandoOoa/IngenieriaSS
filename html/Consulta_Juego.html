@@ -25,7 +25,6 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="Empleado.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Modificar_Empleado.html">Modificar</a></li>
                             <li><a class="dropdown-item" href="Consulta_Empleado.html">Consultar</a></li>
                         </ul>
                     </li>
@@ -35,7 +34,6 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="Juego.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Modificar_Juego.html">Modificar</a></li>
                             <li><a class="dropdown-item" href="Consulta_Juego.html">Consultar</a></li>
                         </ul>
                     </li>
@@ -50,14 +48,12 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Proveedor
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Agregar</a></li>
-                            <li><a class="dropdown-item" href="#">Modificar</a></li>
-                            <li><a class="dropdown-item" href="#">Consultar</a></li>
+                            <li><a class="dropdown-item" href="Proveedor.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="Consulta_Proveedor.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -66,7 +62,6 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Agregar</a></li>
-                            <li><a class="dropdown-item" href="#">Modificar</a></li>
                             <li><a class="dropdown-item" href="#">Consultar</a></li>
                         </ul>
                     </li>
@@ -102,46 +97,11 @@
             <br/>
             <div class="row g-3 align-items-center">
                 <div class="col-auto"><label for="nss-empleado">Buscar:</label></div>
-                <div class="col-5"><input type="text" class="form-control" id="id-juego" placeholder="Id del juego"></div>
+                <div class="col-5"><input type="number" class="form-control" id="idJuego" placeholder="Id del juego"></div>
             </div>
-        <table class="tabla-bonita">
-            <thead>
-                <tr>
-                    <th>ID juego</th>
-                    <th>Nombre juego</th>
-                    <th>Precio compra</th>
-                    <th>Precio venta</th>
-                    <th>Clasificacion</th>
-                    <th>Tipo</th>
-                    <th>Cantidad</th>
-                    <th>Accion</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-                    <td><button class="btn btn-dark" id ="Modificar">Modificar</button></td>
-                </tr>
-                <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                    <td>Celda 7</td>
-                    <td><button class="btn btn-dark" id="Modificar">Modificar</button></td>
-                </tr>
-            </tbody>
-        </table>
+			<div id="contenido"></div>
         </div>
     </div>
 </body>
-<script src="../js/ComplementoBss.js"></script>
+<script src="../js/Juego.js"></script>
 </html>

@@ -3,4 +3,4 @@ $host = 'localhost';
 $bd = 'tienda';
 $user = 'root';
 $pass = '';
-$conexion = new mysqli($host, $user, $pass, $bd);
+$conexion = mysqli_connect($host, $user, $pass, $bd);
