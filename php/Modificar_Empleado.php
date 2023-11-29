@@ -114,7 +114,7 @@ $contrasena = $fila['contraseña'];
             <form class="row g-3 needs-validation" action="Modificar_Empleado2.php" method="post" novalidate>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip01" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="Nombre" placeholder="Ejemplo: Marco Antonio Perez Perez" value=<?php echo $nombre; ?> required>
+                    <input type="text" class="form-control form-field" id="Nombre" placeholder="Ejemplo: Marco Antonio Perez Perez" value=<?php echo $nombre; ?> required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -124,7 +124,7 @@ $contrasena = $fila['contraseña'];
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">NSS:</label>
-                    <input type="number" class="form-control" id="validationTooltip02" placeholder="Ejemplo:12345678910" min="10000000000" max="99999999999" value=<?php echo $nss; ?> readonly required>
+                    <input type="number" class="form-control form-field" id="validationTooltip02" placeholder="Ejemplo:12345678910" min="10000000000" max="99999999999" value=<?php echo $nss; ?> readonly required>
                     <div class="valid-tooltip">
                         Recuerda que son 11 numeros!
                     </div>
@@ -134,7 +134,7 @@ $contrasena = $fila['contraseña'];
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Edad:</label>
-                    <input type="number" class="form-control" id="validationTooltip02" placeholder="Ejemplo:22" min="18" max="150" value=<?php echo $edad; ?> required>
+                    <input type="number" class="form-control form-field" id="validationTooltip02" placeholder="Ejemplo:22" min="18" max="150" value=<?php echo $edad; ?> required>
                     <div class="valid-tooltip">
                         Buena edad!
                     </div>
@@ -144,7 +144,7 @@ $contrasena = $fila['contraseña'];
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">RFC:</label>
-                    <input type="Text" class="form-control" id="validationTooltip02" placeholder="Ejemplo:QUMA470929F37" value=<?php echo $rfc; ?> required>
+                    <input type="Text" class="form-control form-field" id="validationTooltip02" placeholder="Ejemplo:QUMA470929F37" value=<?php echo $rfc; ?> required>
                     <div class="valid-tooltip">
                         OK!
                     </div>
@@ -170,7 +170,7 @@ $contrasena = $fila['contraseña'];
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">
                         Contraseña:</label>
-                    <input type="password" class="form-control" id="validationTooltip02" placeholder="Ejemplo:Tac0s_D3_p0llo" value=<?php echo $contrasena; ?> required>
+                    <input type="password" class="form-control form-field" id="validationTooltip02" placeholder="Ejemplo:Tac0s_D3_p0llo" value=<?php echo $contrasena; ?> required>
                     <div class="valid-tooltip">
                         OK!
                     </div>

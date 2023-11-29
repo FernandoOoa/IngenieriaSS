@@ -1,3 +1,5 @@
+buscar('');
+
 function buscar(idFranquicia = '') {
     var xhr = new XMLHttpRequest();
 

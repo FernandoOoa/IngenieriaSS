@@ -101,7 +101,7 @@
             <form class="row g-3 needs-validation" novalidate>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip01" class="form-label">Nombre del proveedor:</label>
-                    <input type="text" class="form-control" id="validationTooltip01" placeholder="Ejemplo: Juegos locos" required>
+                    <input type="text" class="form-control form-field" id="validationTooltip01" placeholder="Ejemplo: Juegos locos" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -111,7 +111,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip01" class="form-label">Pais origen:</label>
-                    <input type="text" class="form-control" id="validationTooltip01" placeholder="Ejemplo: México" required>
+                    <input type="text" class="form-control form-field" id="validationTooltip01" placeholder="Ejemplo: México" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -121,7 +121,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Telefono:</label>
-                    <input type="number" class="form-control" id="validationTooltip02" placeholder="Ejemplo:1234567891" min="10000000000" max="99999999999" required>
+                    <input type="number" class="form-control form-field" id="validationTooltip02" placeholder="Ejemplo:1234567891" min="10000000000" max="99999999999" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -131,7 +131,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Correo(Email):</label>
-                    <input type="email" class="form-control" id="validationTooltip02" placeholder="Ejemplo:paquito@gmail.com" required>
+                    <input type="email" class="form-control form-field" id="validationTooltip02" placeholder="Ejemplo:paquito@gmail.com" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
