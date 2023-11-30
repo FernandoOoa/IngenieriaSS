@@ -1,3 +1,18 @@
+<?php
+include "Conexion.php";
+$juegoid = $_GET['id'];
+$sql = "select * from juegos where idJuego ='" . $juegoid . "'";
+$resultado = mysqli_query($conexion, $sql);
+$fila = mysqli_fetch_assoc($resultado);
+$idProveedor = $fila['idProveedor'];
+$nombre = $fila['nombre'];
+$precioCompra = $fila['precioCompra'];
+$precioVenta = $fila['precioVenta'];
+$clasificacion = $fila['clasificacion'];
+$tipo = $fila['tipo'];
+$estado = $fila['estado'];
+$cantidad = $fila['cantidad'];
+?>
 <!DOCTYPE html>
 <html lang="es">
 <meta charset="UTF-8">
@@ -17,7 +32,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse" name="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -98,10 +113,20 @@
                     <h1>Modificar juego</h1>
                 </section>
             </div>
-            <form class="row g-3 needs-validation" novalidate>
+            <form class="row g-3 needs-validation" action="../php/Modificar_Juego2.php" method="post" novalidate>
+                <div class="col-md-12 position-relative">
+                    <label for="validationTooltip01" class="form-label">Id juego:</label>
+                    <input type="text" class="form-control form-field" name="id_juego" placeholder="Id del juego" value=<?php echo $juegoid; ?> readonly required>
+                    <div class="valid-tooltip">
+                        Bien!
+                    </div>
+                    <div class="invalid-tooltip">
+                        Falta
+                    </div>
+                </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip01" class="form-label">Id proveedor:</label>
-                    <input type="text" class="form-control form-field" id="validationTooltip01" placeholder="Ver como poner esto" readonly required>
+                    <input type="text" class="form-control form-field" name="id_proveedor" placeholder="Id del proveedor" value=<?php echo $idProveedor; ?> readonly required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -111,7 +136,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control form-field" id="validationTooltip02" placeholder="Ejemplo:Halo 3" min="10000000000" max="99999999999" required>
+                    <input type="text" class="form-control form-field" name="nombre_juego" placeholder="Ejemplo:Halo 3" value="<?php echo $nombre; ?>" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -121,8 +146,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Precio compra:</label>
-                    <input type="number" class="form-control form-field" id="validationTooltip0
-                    2" placeholder="Ejemplo:220" required>
+                    <input type="number" class="form-control form-field" name="juego_precioCompra" placeholder="Ejemplo:220" value=<?php echo $precioCompra; ?> required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -132,8 +156,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Precio venta:</label>
-                    <input type="number" class="form-control form-field" id="validationTooltip0
-                                    2" placeholder="Ejemplo:220" required>
+                    <input type="number" class="form-control form-field" name="juego_precioVenta" placeholder="Ejemplo:220" value=<?php echo $precioVenta; ?> required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -143,7 +166,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Clasificacion:</label>
-                    <input type="Text" class="form-control form-field" id="validationTooltip02" placeholder="Ejemplo:Mayores de edad" required>
+                    <input type="Text" class="form-control form-field" name="clasificacion_juego" placeholder="Ejemplo:Mayores de edad" value="<?php echo $clasificacion; ?>" required>
                     <div class="valid-tooltip">
                         OK!
                     </div>
@@ -153,7 +176,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Tipo:</label>
-                    <input type="Text" class="form-control form-field" id="validationTooltip02" placeholder="Ejemplo:RPG" required>
+                    <input type="Text" class="form-control form-field" name="tipo_juego" placeholder="Ejemplo:RPG" value="<?php echo $tipo; ?>" required>
                     <div class="valid-tooltip">
                         OK!
                     </div>
@@ -163,7 +186,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Estado:</label>
-                    <input type="Text" class="form-control form-field" id="validationTooltip02" placeholder="Ejemplo: Activo" required>
+                    <input type="Text" class="form-control form-field" name="estado_juego" placeholder="Ejemplo: Activo" value="<?php echo $estado; ?>" required>
                     <div class="valid-tooltip">
                         OK!
                     </div>
@@ -173,8 +196,7 @@
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Cantidad:</label>
-                    <input type="number" class="form-control form-field" id="validationTooltip0
-                                                    2" placeholder="Ejemplo:20" required>
+                    <input type="number" class="form-control form-field" name="cantidad_juego" placeholder="Ejemplo:20" value=<?php echo $cantidad; ?> required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -184,7 +206,7 @@
                 </div>
                 <div class="col-12">
                     <button class="btn btn-primary" type="submit">Guardar</button>
-                    <button class="btn btn-bd-light" type="button">Cancelar</button>
+                    <a class="btn btn-bd-light" type="button" href="../html/Consulta_Juego.html">Cancelar</a>
                 </div>
             </form>
         </div>
