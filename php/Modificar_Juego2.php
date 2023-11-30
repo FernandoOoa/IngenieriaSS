@@ -15,7 +15,7 @@ $query = "update juegos set idJuego = '" . $idjuego . "', idProveedor = '" . $id
 echo $query;
 if (mysqli_query($conexion, $query)) {
     echo "<script>
-            alert('Juegio modificado correctamente');
+            alert('Juego modificado correctamente');
             location.assign('../html/Juego.html');
             </script>";
 } else {
