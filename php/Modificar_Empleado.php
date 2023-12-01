@@ -5,7 +5,7 @@ $sql = "select * from empleados where nss ='" . $nss . "'";
 $resultado = mysqli_query($conexion, $sql);
 $fila = mysqli_fetch_assoc($resultado);
 $nss = $fila['nss'];
-$nombre = $fila['nombre'];
+$nombre = $fila["nombre"];
 $edad = $fila['edad'];
 $rfc = $fila['rfc'];
 $estado = $fila['estado'];
@@ -37,9 +37,8 @@ $contrasena = $fila['contraseña'];
                             Empleados
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Empleado.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Modificar_Empleado.html">Modificar</a></li>
-                            <li><a class="dropdown-item" href="Consulta_Empleado.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="../html/Empleado.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="../html/Consulta_Empleado.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -47,9 +46,8 @@ $contrasena = $fila['contraseña'];
                             Juegos
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Juego.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Modificar_Juego.html">Modificar</a></li>
-                            <li><a class="dropdown-item" href="Consulta_Juego.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="../html/Juego.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="../html/Consulta_Juego.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -67,9 +65,8 @@ $contrasena = $fila['contraseña'];
                             Proveedor
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Agregar</a></li>
-                            <li><a class="dropdown-item" href="#">Modificar</a></li>
-                            <li><a class="dropdown-item" href="#">Consultar</a></li>
+                            <li><a class="dropdown-item" href="../html/Proveedor.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="../html/Proveedor_consulta.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -77,9 +74,8 @@ $contrasena = $fila['contraseña'];
                             Franquicias
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Agregar</a></li>
-                            <li><a class="dropdown-item" href="#">Modificar</a></li>
-                            <li><a class="dropdown-item" href="#">Consultar</a></li>
+                            <li><a class="dropdown-item" href="../html/Franquicia.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="../html/Franquicia_consulta.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -114,7 +110,7 @@ $contrasena = $fila['contraseña'];
             <form class="row g-3 needs-validation" action="Modificar_Empleado2.php" method="post" novalidate>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip01" class="form-label">Nombre</label>
-                    <input type="text" class="form-control form-field" id="Nombre" placeholder="Ejemplo: Marco Antonio Perez Perez" value=<?php echo $nombre; ?> required>
+                    <input type="text" class="form-control form-field" name="nombre_empleado" placeholder="Ejemplo: Marco Antonio Perez Perez" value="<?php echo $nombre; ?>" required>
                     <div class="valid-tooltip">
                         Bien!
                     </div>
@@ -124,7 +120,7 @@ $contrasena = $fila['contraseña'];
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">NSS:</label>
-                    <input type="number" class="form-control form-field" id="validationTooltip02" placeholder="Ejemplo:12345678910" min="10000000000" max="99999999999" value=<?php echo $nss; ?> readonly required>
+                    <input type="number" class="form-control form-field" name="nss_empleado" placeholder="Ejemplo:12345678910" min="10000000000" max="99999999999" value=<?php echo $nss; ?> readonly required>
                     <div class="valid-tooltip">
                         Recuerda que son 11 numeros!
                     </div>
@@ -134,7 +130,7 @@ $contrasena = $fila['contraseña'];
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Edad:</label>
-                    <input type="number" class="form-control form-field" id="validationTooltip02" placeholder="Ejemplo:22" min="18" max="150" value=<?php echo $edad; ?> required>
+                    <input type="number" class="form-control form-field" name="edad_empleado" placeholder="Ejemplo:22" min="18" max="150" value=<?php echo $edad; ?> required>
                     <div class="valid-tooltip">
                         Buena edad!
                     </div>
@@ -144,7 +140,7 @@ $contrasena = $fila['contraseña'];
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">RFC:</label>
-                    <input type="Text" class="form-control form-field" id="validationTooltip02" placeholder="Ejemplo:QUMA470929F37" value=<?php echo $rfc; ?> required>
+                    <input type="Text" class="form-control form-field" name="rfc_empleado" placeholder="Ejemplo:QUMA470929F37" value=<?php echo $rfc; ?> required>
                     <div class="valid-tooltip">
                         OK!
                     </div>
@@ -155,22 +151,22 @@ $contrasena = $fila['contraseña'];
                 <div class="col-md-12 position-relative">
                     <label for="Radiobutons" class="form-label">Estado:</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <input class="form-check-input" type="radio" name="estado_empleado" name="inlineRadio1" value="Activo">
                         <label class="form-check-label" for="inlineRadio1">Activo</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <input class="form-check-input" type="radio" name="estado_empleado" name="inlineRadio2" value="Inactivo">
                         <label class="form-check-label" for="inlineRadio2">Inactivo</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                        <label class="form-check-label" for="inlineRadio3">Incapasitado</label>
+                        <input class="form-check-input" type="radio" name="estado_empleado" name="inlineRadio3" value="Incapacidad">
+                        <label class="form-check-label" for="inlineRadio3">Incapacitado</label>
                     </div>
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">
                         Contraseña:</label>
-                    <input type="password" class="form-control form-field" id="validationTooltip02" placeholder="Ejemplo:Tac0s_D3_p0llo" value=<?php echo $contrasena; ?> required>
+                    <input type="password" class="form-control form-field" name="contrasena_empleado" placeholder="Ejemplo:Tac0s_D3_p0llo" value=<?php echo $contrasena; ?> required>
                     <div class="valid-tooltip">
                         OK!
                     </div>

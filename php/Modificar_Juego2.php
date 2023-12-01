@@ -10,9 +10,8 @@ $tipo = $_POST['tipo_juego'];
 $estado = $_POST['estado_juego'];
 $cantidad = $_POST['cantidad_juego'];
 
-
 $query = "update juegos set idJuego = '" . $idjuego . "', idProveedor = '" . $idproveedor . "', nombre ='" . $nombre . "', precioCompra = '" . $preciocompra . "', precioVenta = '" . $precioventa . "', clasificacion = '" . $clasificacion . "',tipo = '" . $tipo . "', estado ='" . $estado . "',cantidad ='" . $cantidad . "' where idJuego = '" . $idjuego . "'";
-echo $query;
+
 if (mysqli_query($conexion, $query)) {
     echo "<script>
             alert('Juego modificado correctamente');

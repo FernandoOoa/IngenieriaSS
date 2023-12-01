@@ -30,7 +30,7 @@ if (mysqli_num_rows($resultado)>0) {
             <td>" . $fila['telefono'] . "</td>
             <td>" . $fila['correo'] . "</td>
 			<td>" . $fila['direccion'] . "</td>
-            <td><a href='../php/Modificar_Franquicia.php? id=" . $fila['idFranquicia'] . "'>Modificar</button></td>
+            <td><a class='btn btn-bd-light' type='button' href='../php/Modificar_Franquicia.php? id=" . $fila['idFranquicia'] . "'>Modificar</button></td>
             </tr>";
     }
     $salida .= "</tbody></table>";
