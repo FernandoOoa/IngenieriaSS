@@ -3,7 +3,6 @@ include "conexion.php";
 
 $salida = "";
 $query = "SELECT * FROM empleados";
-echo $_POST['consulta'];
 if ($_POST['consulta'] != null) {
     $q = $_POST['consulta'];
     $query = "SELECT * FROM empleados WHERE nss = '$q'";
@@ -27,7 +26,18 @@ if (mysqli_num_rows($resultado) > 0) {
     }
     $salida .= "</tbody></table>";
 } else {
-    $salida .= "No esta ese empleado";
+    $salida .= "<table class='tabla-bonita'>
+            <thead>
+                <tr>
+                    <th>NSS</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>No se encontro</td>
+            </tr>
+            </tbody></table>";
 }
 echo $salida;
 mysqli_close($conexion);

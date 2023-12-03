@@ -12,12 +12,11 @@ if (mysqli_num_rows($resultado) > 0) {
     $salida .= "<table class='tabla-bonita'>
             <thead>
                 <tr>
-                    <th>ID juego</th>
-                    <th>Nombre juego</th>
-                    <th>Precio compra</th>
-                    <th>Precio venta</th>
+                    <th>ID</th>
+                    <th>Nombre</th>
                     <th>Clasificacion</th>
-                    <th>Tipo</th>
+                    <th>Precio C/U</th>
+                    <th>Inventario</th>
                     <th>Cantidad</th>
                     <th>Accion</th>
                 </tr>
@@ -28,12 +27,11 @@ if (mysqli_num_rows($resultado) > 0) {
         <tr>
             <td>" . $fila['idJuego'] . "</td>
             <td>" . $fila['nombre'] . "</td>
-            <td>" . $fila['precioCompra'] . "</td>
-            <td>" . $fila['precioVenta'] . "</td>
             <td>" . $fila['clasificacion'] . "</td>
-			<td>" . $fila['tipo'] . "</td>
+            <td>" . $fila['precioVenta'] . "</td>
 			<td>" . $fila['cantidad'] . "</td>
-            <td><a class='btn btn-bd-light' type='button' href='../php/Modificar_Juego.php? id=" . $fila['idJuego'] . "'>Modificar</button></td>
+            <td><input type='number'></td>
+            <td><a class='btn btn-bd-light'>Añadir</button></td>
             </tr>";
     }
     $salida .= "</tbody></table>";
