@@ -101,48 +101,19 @@
                 </section>
             </div>
             <br />
-            <form action="procesar-venta.php" method="post" class="row g-3 needs-validation" novalidate>
-                <div class="row mb-3">
-                    <label for="inputEmail3" class="col-sm-1 col-form-label">Fecha:</label>
+            <label id = "fecha"></label>
+            <br />
+            <label id = "folio_venta">Folio venta:</label>
+            <br />
+            <br />
+                <div class="row mb-6">
+                    <label class="col-sm-2 col-form-label">Id del empleado:</label>
                     <div class="col-sm-1">
-                        <input type="text" class="form-control form-field" id="fecha" readonly>
+                        <input type="text" class="form-control form-field" id="consulta_empleado">
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label for="inputEmail3" class="col-sm-1 col-form-label">Folio venta:</label>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control form-field" id="folio" readonly>
-                    </div>
-                </div>
-                <br /><br />
-                <div class="row mb-3">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Id del empleado:</label>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control form-field" id="id_Empleado">
-                    </div>
-                </div>
-                <table class="tabla-bonita">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Juan</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>María</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Pedro</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div id="contenido_empleado"></div>
+
                 <h2>Juegos</h2>
                 <br />
                 <form action="procesar-busqueda-juegos.php" method="post">
@@ -243,5 +214,5 @@
     </div>
 </body>
 <script src="../js/ComplementoBss.js"></script>
-
+<script src="../js/Ventas.js"></script>
 </html>
