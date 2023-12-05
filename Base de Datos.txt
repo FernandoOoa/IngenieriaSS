@@ -49,25 +49,25 @@ CREATE TABLE Franquicias(
 
 CREATE TABLE Compras(
 	folioCompra int NOT NULL AUTO_INCREMENT,
-	idProveedor int NOT NULL,
 	fecha varchar(10) NOT NULL,
 	nss bigint NOT NULL,
 	estado varchar(10),
 	
 	PRIMARY KEY(folioCompra),
-	FOREIGN KEY(idProveedor) REFERENCES Proveedores(idProveedor),
 	FOREIGN KEY(nss) REFERENCES Empleados(nss)
 );
 
 CREATE TABLE JuegosCompra(
 	idJuegosCompra int NOT NULL AUTO_INCREMENT,
 	idJuego int NOT NULL,
+	idProveedor int NOT NULL,
 	folioCompra int NOT NULL,
 	cantidad int NOT NULL,
 	precioCompra float,
 
 	PRIMARY KEY(idJuegosCompra),
 	FOREIGN KEY(idJuego) REFERENCES Juegos(idJuego),
+	FOREIGN KEY(idProveedor) REFERENCES Proveedores(idProveedor),
 	FOREIGN KEY(folioCompra) REFERENCES Compras(folioCompra)
 );
 

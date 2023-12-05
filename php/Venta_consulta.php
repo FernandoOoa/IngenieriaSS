@@ -1,110 +1,144 @@
 <?php
 include "conexion.php";
-
+$iva = .16;
 $salida = "";
-$query = "SELECT * FROM ventas";
-
 echo $_POST['consulta'];
+$query = "SELECT V.*, E.nombre AS nombre_vendedor
+FROM Ventas V
+INNER JOIN Empleados E ON V.nss = E.nss";
 if ($_POST['consulta'] != null) {
     $q = $_POST['consulta'];
-    $query = "SELECT * FROM ventas WHERE folioVenta LIKE '$q%'";
-}
-$resultado = mysqli_query($conexion, $query);
-
-
-if (mysqli_num_rows($resultado) > 0) {
-    $salida .= "<table class='tabla-bonita'>
-                <thead>
-                    <tr>
-                        <th>Folio venta</th>
-                        <th>Id vendeedor</th>
-                        <th>Nombre Vendedor</th>
-                        <th>Fecha</th>
-                        <th>ID Juego</th>
-                        <th>Nombre juego</th>
-                        <th>Cantidad</th>
-                        <th>Precio Unitario</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>";
-				
-	$total = 0;
-	
-	while ($fila = mysqli_fetch_assoc($resultado)) {
-				
-		$empleadoQuery = "SELECT * FROM empleados WHERE nss = '". $fila['nss'] ."' ";
-		$empleadoResult = mysqli_query($conexion, $empleadoQuery);
-		$empleado = mysqli_fetch_assoc($empleadoResult);
-		
-		$juegoVentaQuery = "SELECT * FROM JuegosVenta WHERE folioVenta = '". $fila['folioVenta'] ."' ";
-		$juegoVentaResult = mysqli_query($conexion, $juegoVentaQuery);
-
-						
-		while ($juegoVenta = mysqli_fetch_assoc($juegoVentaResult)) {
-			
-			$juegoQuery = "SELECT * FROM juegos WHERE idJuego = '".$juegoVenta['idJuego']."'";
-			$juegoResult = mysqli_query($conexion, $juegoQuery);
-			$juego = mysqli_fetch_assoc($juegoResult);
-			
-			$cant = $juegoVenta['cantidad'];
-			$cost = $juegoVenta['precioVenta']; 
-			
-			$aux = $cant * $cost;
-			$total = $total+$aux;
-			
-			$salida .= "
-					<tr>
-                        <td>" . $fila['folioVenta'] . "</td>
-						<td>" .$empleado['nss']. "</td>
-						<td>" .$empleado['nombre']. "</td>
-						<td>" . $fila['fecha'] . "</td>
-						<td>" .$juegoVenta['idJuego']. "</td>
-						<td>" . $juego['nombre'] . "</td>
-						<td>" .$juegoVenta['cantidad']. "</td>
-						<td>" .$juegoVenta['precioVenta']. "</td>
-						<td>" . $aux . "</td>
-                    </tr>";
-			
-		}
+    $query = "SELECT V.folioVenta AS 'folio',
+        V.nss AS 'nss',
+        E.nombre AS 'nombre',
+        V.fecha AS 'fecha',
+        JV.idJuegosVenta AS 'Id_Juego_Venta',
+        JV.idJuego AS 'Id_Juego',
+        J.nombre AS 'Nombre_Juego',
+        JV.cantidad AS 'Cantidad',
+        JV.precioVenta AS 'Precio'
+        FROM Ventas V
+        JOIN Empleados E ON V.nss = E.nss
+        JOIN JuegosVenta JV ON V.folioVenta = JV.folioVenta
+        JOIN Juegos J ON JV.idJuego = J.idJuego
+        WHERE V.folioVenta = $q";
+    $resultado = mysqli_query($conexion, $query);
+    if ($resultado->num_rows > 0) {
+        $salida .= "<table class='tabla-bonita'>
+        <thead>
+        <th>Folio Venta</th>
+        <th>NSS Vendedor</th>
+        <th>Nombre</th>
+        <th>Fecha</th>
+        <th>Id Juego Venta</th>
+        <th>Id Juego</th>
+        <th>Nombre Juego</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Importe</th>
+        </thead>
+        <tbody>";
+        $cont = 0.0;
+        $total = 0.0;
+        $importe = 0.0;
+        while ($fila = mysqli_fetch_assoc($resultado)) {
+            $importe = (float)$fila['Precio'] * (float)$fila['Cantidad'];
+            echo $importe;
+            $total += $importe;
+            if ($cont <= 1) {
+                $salida .= "<tr>
+            <td>" . $fila['folio'] . "</td>
+            <td>" . $fila['nss'] . "</td>
+            <td>" . $fila['nombre'] . "</td>
+            <td>" . $fila['fecha'] . "</td>
+            <td>" . $fila['Id_Juego_Venta'] . "</td>
+            <td>" . $fila['Id_Juego'] . "</td>
+            <td>" . $fila['Nombre_Juego'] . "</td>
+            <td>" . $fila['Cantidad'] . "</td>
+            <td>" . $fila['Precio'] . "</td>
+            <td>" . $importe . "</td>
+            </tr>";
+            } else {
+                $salida .= "<tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>" . $fila['Id_Juego_Venta'] . "</td>
+            <td>" . $fila['Id_Juego'] . "</td>
+            <td>" . $fila['Nombre_Juego'] . "</td>
+            <td>" . $fila['Cantidad'] . "</td>
+            <td>" . $fila['Precio'] . "</td>
+            <td>" . $importe . "</td>
+            </tr>";
+            }
+            $cont++;
+        }
+        $calculoiva = $total * $iva;
+        $total2 = $total + $calculoiva;
+        $salida .= "
+        <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Sub Total </td>
+                <td>" . $total . "</td>
+                </tr>
+        <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>IVA </td>
+                <td>" . $calculoiva . "</td>
+                </tr>
+        <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Total</td>
+                <td>" . $total2 . "</td>
+                </tr>
+        </tbody></table>";
+    } else {
+        $salida .= "No hay datos :'(";
     }
-	$IVA = $total*0.16;
-	$TotalFinal = $total+$IVA;
-	
-    $salida .= "<tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-						<td>Sub total:</td>
-                        <td>" .$total. "</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-						<td>IVA:</td>
-                        <td>" .$IVA."</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-						<td>Total:</td>
-                        <td>".$TotalFinal."</td>
-                        <td></td>
-                        <td></td></tbody></table>";
 } else {
-    $salida .= "No hay datos :'(";
+    $resultado = $conexion->query($query);
+    if ($resultado->num_rows > 0) {
+        $salida .= "<table class='tabla-bonita'>
+        <thead>
+        <th>Folio Venta</th>
+        <th>NSS Vendedor</th>
+        <th>Nombre</th>
+        <th>Fecha</th>
+        </thead>
+        <tbody>";
+        while ($fila = mysqli_fetch_assoc($resultado)) {
+            $salida .= "
+            <tr>
+            <td>" . $fila['folioVenta'] . "</td>
+            <td>" . $fila['nss'] . "</td>
+            <td>" . $fila['nombre_vendedor'] . "</td>
+            <td>" . $fila['fecha'] . "</td>
+            </tr>";
+        }
+        $salida .= "</tbody></table>";
+    }
 }
 echo $salida;
 mysqli_close($conexion);
