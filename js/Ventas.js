@@ -85,12 +85,27 @@ function buscar_juego(idJuego) {
             if (xhr.status === 200) {
                 document.getElementById("contenido_juego").innerHTML = xhr.responseText;
                 let isVisible = false;
+                const id = parseInt(document.querySelector('#id_juego').textContent);
+                var inventario = parseInt(document.querySelector('#inventario').textContent);
+                for (let articulo of datos){
+                    if (id == articulo[0]) {
+                        console.log(articulo[3]);
+                        inventario = inventario - articulo[3];
+                        console.log(inventario);
+                        document.getElementById("inventario").innerHTML = inventario;
+                    }
+                }
                 const cantidad = document.getElementById('numero_juegos');
-                cantidad.addEventListener('input', function () {
-                    var valor = cantidad.value;
+                cantidad.addEventListener('input', function () {  
                     const inventario = parseInt(document.querySelector('#inventario').textContent);
-                    if (valor > inventario) { isVisible = false; }
-                    else { isVisible = true}
+                    var valor = cantidad.value;
+                    console.log(valor,inventario);
+                    if (valor > 0 && valor < inventario) {
+                        isVisible = true;
+                    }
+                    else {
+                        isVisible = false;
+                    }
                     document.getElementById("boton_add").style.display = isVisible ? "block" : "none";
                 });
             } else {
@@ -132,14 +147,7 @@ function add() {
         datos.push([id, nombre, precio, cantidad]);
     }  
     document.getElementById("tabla_articulos").innerHTML = crearTabla(datos);
-    var inventario = parseInt(document.querySelector('#inventario').textContent);
-                for (let articulo of datos){
-                    if (id == articulo[0]) {
-                        console.log(articulo[3]);
-                        inventario = inventario - articulo[3];
-                        document.getElementById("inventario").innerHTML = inventario;
-                    }
-                }
+    buscar_juego(id);
 }
 
 function crearTabla(lista) {

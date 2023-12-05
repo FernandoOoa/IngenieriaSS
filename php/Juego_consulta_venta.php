@@ -2,13 +2,12 @@
 include "conexion.php";
 
 $salida = "";
-$query = "SELECT * FROM juegos";
 if ($_POST['idJuego'] != null) {
     $q = $_POST['idJuego'];
     $query = "SELECT * FROM juegos WHERE idjuego LIKE '$q%'";
-}
-$resultado = mysqli_query($conexion, $query);
-if (mysqli_num_rows($resultado) > 0) {
+    $resultado = mysqli_query($conexion, $query);
+    if (mysqli_num_rows($resultado) > 0) {
+    }
     $salida .= "<table class='tabla-bonita'>
             <thead>
                 <tr>
@@ -31,12 +30,27 @@ if (mysqli_num_rows($resultado) > 0) {
             <td id='precio'>" . $fila['precioVenta'] . "</td>
 			<td id='inventario'>" . $fila['cantidad'] . "</td>
             <td><input class='form-control form-field' type='number' id='numero_juegos' placeholder='No. de juegos'></td>
-            <td><a class='btn btn-bd-light' id='boton_add' onclick='add()'>Añadir</button></td>
+            <td><button class='btn btn-bd-light' id='boton_add' onclick='add()' style='display: none;'>Añadir</button></td>
             </tr>";
     }
     $salida .= "</tbody></table>";
 } else {
-    $salida .= "No hay datos :'(";
+    $salida .= "<table class='tabla-bonita'>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Clasificacion</th>
+                    <th>Precio C/U</th>
+                    <th>Inventario</th>
+                    <th>Cantidad</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>No hay no existe</td>
+            </tr>";
 }
 echo $salida;
 mysqli_close($conexion);
