@@ -109,7 +109,7 @@ CREATE TABLE JuegosVenta(
 	cantidad int NOT NULL,
 	precioVenta float,
 
-	PRIMARY KEY(idJuegosCompra),
+	PRIMARY KEY(idJuegosVenta),
 	FOREIGN KEY(folioVenta) REFERENCES Ventas(folioVenta),
 	FOREIGN KEY(idJuego) REFERENCES Juegos(idJuego)
 );
