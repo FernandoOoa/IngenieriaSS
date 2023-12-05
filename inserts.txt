@@ -14,7 +14,8 @@ VALUES
 ('2', '3', 'Call of Duty: Modern Warfare III', '1100.00', '1399.00', 'M', 'Accion/FPS/Multijugador', 'Disponible', '200'),
 ('3', '5', 'Jedi: Fallen Order', '670.00', '899.00', 'T', 'Accion/Aventura', 'Disponible', '80'),
 ('4', '1', 'Halo: Infinite', '1150.00', '1399.00', 'T', 'Accion/FPS/Aventura', 'Disponible', '120'),
-('5', '4', 'Minecraft', '250.00', '399.00','E', 'Accion/Aventura', 'Disponible', '30');
+('5', '4', 'Minecraft', '250.00', '399.00','E', 'Accion/Aventura', 'Disponible', '30')
+('6', '2', 'Overwatch 2', '149.99', '199.99', 'Accion/FPS', 'Disponible', '189');
 
 INSERT INTO Proveedores(idProveedor, nombre, pais, telefono, correo)
 VALUES
@@ -40,13 +41,14 @@ VALUES
 ('4', '5', '2023/03/23', '27191204922', 'completado'),
 ('5', '3', '2023/04/01', '38170499131', 'en proceso');
 
-INSERT INTO JuegosCompra(idJuego, folioCompra, cantidad)
+INSERT INTO JuegosCompra(idJuegoCompra,idJuego, folioCompra, cantidad, precioCompra)
 VALUES
-('2', '1', '500'),
-('4', '2', '700'),
-('5', '3', '70'),
-('3', '4', '500'),
-('1', '5', '50');
+('1','2', '1', '500','1100.00'),
+('2','6', '1', '30','180.00'),
+('3','4', '2', '700','1499.99'),
+('4','5', '3', '70','279.99'),
+('5','3', '4', '500','649.99'),
+('6','1', '5', '50','220.00');
 
 INSERT INTO Pedidos(folioPedido, idFranquicia, nss, fecha, fechaFinal, estado)
 VALUES
@@ -72,10 +74,11 @@ VALUES
 ('4', '11045198831', '2023/03/21'),
 ('5', '66131894500', '2023/04/01');
 
-INSERT INTO JuegosVenta(folioVenta, idJuego, cantidad)
+INSERT INTO JuegosVenta(idJuegosVenta, folioVenta, idJuego, cantidad, precioVenta)
 VALUES
-('1', '5', '100'),
-('2', '2', '300'),
-('3', '4', '320'),
-('4', '3', '2'),
-('5', '2', '1');
+('1', '1', '5', '100', '429.99'),
+('2', '2', '2', '300', '1449.99'),
+('3', '3', '4', '320', '1419.99'),
+('4', '4', '3', '2','999.99'), 
+('5', '6', '2', '1', '1400.00'),
+('5', '5', '6', '1', '400.00');
