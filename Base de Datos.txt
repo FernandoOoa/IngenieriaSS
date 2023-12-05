@@ -60,10 +60,13 @@ CREATE TABLE Compras(
 );
 
 CREATE TABLE JuegosCompra(
+	idJuegosCompra int NOT NULL,
 	idJuego int NOT NULL,
 	folioCompra int NOT NULL,
 	cantidad int NOT NULL,
+	precioCompra float,
 
+	PRIMARY KEY(idJuegosCompra),
 	FOREIGN KEY(idJuego) REFERENCES Juegos(idJuego),
 	FOREIGN KEY(folioCompra) REFERENCES Compras(folioCompra)
 );
@@ -100,10 +103,13 @@ CREATE TABLE Ventas(
 );
 
 CREATE TABLE JuegosVenta(
+	idJuegosVenta int NOT NULL,
 	folioVenta int NOT NULL,
 	idJuego int NOT NULL,
 	cantidad int NOT NULL,
+	precioVenta float,
 
+	PRIMARY KEY(idJuegosCompra),
 	FOREIGN KEY(folioVenta) REFERENCES Ventas(folioVenta),
 	FOREIGN KEY(idJuego) REFERENCES Juegos(idJuego)
 );
