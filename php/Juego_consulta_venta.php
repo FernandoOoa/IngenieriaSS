@@ -25,13 +25,13 @@ if (mysqli_num_rows($resultado) > 0) {
     while ($fila = mysqli_fetch_assoc($resultado)) {
         $salida .= "
         <tr>
-            <td>" . $fila['idJuego'] . "</td>
-            <td>" . $fila['nombre'] . "</td>
-            <td>" . $fila['clasificacion'] . "</td>
-            <td>" . $fila['precioVenta'] . "</td>
-			<td>" . $fila['cantidad'] . "</td>
-            <td><input type='number'></td>
-            <td><a class='btn btn-bd-light'>Añadir</button></td>
+            <td id='id_juego'>" . $fila['idJuego'] . "</td>
+            <td id='nombre'>" . $fila['nombre'] . "</td>
+            <td id='clasificacion'>" . $fila['clasificacion'] . "</td>
+            <td id='precio'>" . $fila['precioVenta'] . "</td>
+			<td id='inventario'>" . $fila['cantidad'] . "</td>
+            <td><input class='form-control form-field' type='number' id='numero_juegos' placeholder='No. de juegos'></td>
+            <td><a class='btn btn-bd-light' id='boton_add' onclick='add()'>Añadir</button></td>
             </tr>";
     }
     $salida .= "</tbody></table>";
