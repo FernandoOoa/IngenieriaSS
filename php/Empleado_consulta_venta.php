@@ -2,11 +2,8 @@
 include "conexion.php";
 
 $salida = "";
-$query = "SELECT * FROM empleados";
-if ($_POST['consulta'] != null) {
-    $q = $_POST['consulta'];
-    $query = "SELECT * FROM empleados WHERE nss = '$q'";
-}
+$q = $_POST['consulta'];
+$query = "SELECT * FROM empleados WHERE nss = '$q'";
 $resultado = mysqli_query($conexion, $query);
 if (mysqli_num_rows($resultado) > 0) {
     $salida .= "<table class='tabla-bonita'>
