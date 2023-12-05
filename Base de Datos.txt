@@ -63,6 +63,7 @@ CREATE TABLE JuegosCompra(
 	idJuego int NOT NULL,
 	folioCompra int NOT NULL,
 	cantidad int NOT NULL,
+	precioCompra float,
 
 	FOREIGN KEY(idJuego) REFERENCES Juegos(idJuego),
 	FOREIGN KEY(folioCompra) REFERENCES Compras(folioCompra)
@@ -103,6 +104,7 @@ CREATE TABLE JuegosVenta(
 	folioVenta int NOT NULL,
 	idJuego int NOT NULL,
 	cantidad int NOT NULL,
+	precioVenta float,
 
 	FOREIGN KEY(folioVenta) REFERENCES Ventas(folioVenta),
 	FOREIGN KEY(idJuego) REFERENCES Juegos(idJuego)
