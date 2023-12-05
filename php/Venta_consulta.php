@@ -2,7 +2,6 @@
 include "conexion.php";
 $iva = .16;
 $salida = "";
-echo $_POST['consulta'];
 $query = "SELECT V.*, E.nombre AS nombre_vendedor
 FROM Ventas V
 INNER JOIN Empleados E ON V.nss = E.nss";
@@ -43,7 +42,6 @@ if ($_POST['consulta'] != null) {
         $importe = 0.0;
         while ($fila = mysqli_fetch_assoc($resultado)) {
             $importe = (float)$fila['Precio'] * (float)$fila['Cantidad'];
-            echo $importe;
             $total += $importe;
             if ($cont <= 1) {
                 $salida .= "<tr>

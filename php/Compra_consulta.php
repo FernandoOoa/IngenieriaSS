@@ -2,9 +2,6 @@
 include "conexion.php";
 $iva = 0.16; // IVA del 16%
 $salida = "";
-
-echo $_POST['consulta'];
-
 $query = "SELECT C.*, E.nombre AS nombre_empleado
           FROM Compras C
           INNER JOIN Empleados E ON C.nss = E.nss";

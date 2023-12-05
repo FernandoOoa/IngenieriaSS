@@ -96,18 +96,13 @@
                     <h1>Agregar juego</h1>
                 </section>
             </div>
+            <br/>
+            <br/>
             <form class="row g-3 needs-validation" action="../php/Juego.php" method="post" novalidate>
-                <div class="col-md-12 position-relative">
-                    <label for="validationTooltip01" class="form-label">Id proveedor:</label>
-                    <input type="text" class="form-control form-field" name="proveedor_juego" placeholder="Ver como poner esto"
-                        autofocus required>
-                    <div class="valid-tooltip">
-                        Bien!
+                    <div class="row mb-12">
+                    <label class="col-sm-2 col-form-label">Id del empleado:</label>
+                            <div id="select_empleado"></div>
                     </div>
-                    <div class="invalid-tooltip">
-                        Falta
-                    </div>
-                </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Nombre:</label>
                     <input type="text" class="form-control form-field" name="nombre_juego" placeholder="Ejemplo:Halo 3"
@@ -189,5 +184,6 @@
     </div>
 </body>
 <script src="../js/ComplementoBss.js"></script>
+<script src="../js/Juego_add.js"></script>
 
 </html>
