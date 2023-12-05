@@ -43,12 +43,12 @@ if (mysqli_num_rows($resultado) > 0) {
 						
 		while ($juegoVenta = mysqli_fetch_assoc($juegoVentaResult)) {
 			
-			$juegoQuery = "SELECT * FROM Juegos WHERE idJuego = '".$juegoVenta['idJuego']."'";
+			$juegoQuery = "SELECT * FROM juegos WHERE idJuego = '".$juegoVenta['idJuego']."'";
 			$juegoResult = mysqli_query($conexion, $juegoQuery);
 			$juego = mysqli_fetch_assoc($juegoResult);
 			
 			$cant = $juegoVenta['cantidad'];
-			$cost = $juego['precioVenta']; 
+			$cost = $juegoVenta['precioVenta']; 
 			
 			$aux = $cant * $cost;
 			$total = $total+$aux;
@@ -62,7 +62,7 @@ if (mysqli_num_rows($resultado) > 0) {
 						<td>" .$juegoVenta['idJuego']. "</td>
 						<td>" . $juego['nombre'] . "</td>
 						<td>" .$juegoVenta['cantidad']. "</td>
-						<td>" .$juego['precioVenta']. "</td>
+						<td>" .$juegoVenta['precioVenta']. "</td>
 						<td>" . $aux . "</td>
                     </tr>";
 			
