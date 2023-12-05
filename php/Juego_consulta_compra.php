@@ -2,13 +2,12 @@
 include "conexion.php";
 
 $salida = "";
-$query = "SELECT * FROM juegos";
 if ($_POST['idJuego'] != null) {
     $q = $_POST['idJuego'];
     $query = "SELECT * FROM juegos WHERE idjuego LIKE '$q%'";
-}
-$resultado = mysqli_query($conexion, $query);
-if (mysqli_num_rows($resultado) > 0) {
+    $resultado = mysqli_query($conexion, $query);
+    if (mysqli_num_rows($resultado) > 0) {
+    }
     $salida .= "<table class='tabla-bonita'>
             <thead>
                 <tr>
@@ -38,7 +37,23 @@ if (mysqli_num_rows($resultado) > 0) {
     }
     $salida .= "</tbody></table>";
 } else {
-    $salida .= "No hay datos :'(";
+    $salida .= "<table class='tabla-bonita'>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Clasificacion</th>
+                    <th>Precio C/U</th>
+                    <th>Inventario</th>
+                    <th>Cantidad</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>No hay datos, no existe</td>
+            </tr>
+            </tbody></table>";
 }
 echo $salida;
 mysqli_close($conexion);

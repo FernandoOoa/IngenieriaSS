@@ -99,7 +99,6 @@ function buscar_juego(idJuego) {
                 const cantidad = document.getElementById('numero_juegos');
                 cantidad.addEventListener('input', function () {
                     var valor = cantidad.value;
-                    console.log("valor:" + valor)
                     if (valor <= 10000-inventario && valor > 0 && valor != '') {
                         isVisible = true;
                     }
@@ -151,8 +150,6 @@ function add() {
     for (let articulo of datos){
         if (id == articulo[0]) {
             inventario = inventario + articulo[3];
-            console.log(articulo[3]);
-            console.log(inventario);
         }
     }
     buscar_juego(id);
@@ -213,12 +210,28 @@ function crearTabla(lista) {
 }
 
 function guardar() {
-    console.log(fecha);
     const folio = parseInt(document.getElementById('folio_venta').innerText);
-    console.log(folio);
     const idempleado = parseInt(document.getElementById('idempleado').innerHTML);
-    console.log(idempleado);
-    console.log(datos);
-    addVenta(fecha, folio, idempleado, datos);
+    addCompra(fecha, folio, idempleado, datos);
+}
+function addCompra(fecha,folio,idempleado,datos) {
+    var xhr = new XMLHttpRequest();
 
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                document.getElementById("tabla_articulos").innerHTML = xhr.responseText;
+            } else {
+                console.log("Error: " + xhr.status);
+            }
+        }
+    };
+
+    var formData = new FormData();
+    formData.append('fecha', fecha);
+    formData.append('folio', folio);
+    formData.append('idempleado', idempleado);
+    formData.append('datos', JSON.stringify(datos));
+    xhr.open("POST", '../php/Compra.php', true);
+    xhr.send(formData);
 }

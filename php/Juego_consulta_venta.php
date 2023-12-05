@@ -50,7 +50,8 @@ if ($_POST['idJuego'] != null) {
             <tbody>
             <tr>
             <td>No hay datos, no existe</td>
-            </tr>";
+            </tr>
+            </tbody></table>";
 }
 echo $salida;
 mysqli_close($conexion);
