@@ -146,13 +146,14 @@ function add() {
     }  
     document.getElementById("tabla_articulos").innerHTML = crearTabla(datos);
     var inventario = parseInt(document.querySelector('#inventario').textContent);
-                for (let articulo of datos){
-                    if (id == articulo[0]) {
-                        console.log(articulo[3]);
-                        inventario = inventario - articulo[3];
-                        document.getElementById("inventario").innerHTML = inventario;
-                    }
-                }
+    for (let articulo of datos){
+         if (id == articulo[0]) {
+             console.log(articulo[3]);
+             inventario = inventario - articulo[3];
+             document.getElementById("inventario").innerHTML = inventario;
+         }
+    }
+    buscar_juego(id);
 }
 
 function crearTabla(lista) {

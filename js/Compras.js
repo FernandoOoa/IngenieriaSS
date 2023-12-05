@@ -91,7 +91,7 @@ function buscar_juego(idJuego) {
                 var inventario = parseInt(document.querySelector('#inventario').textContent);
                 for (let articulo of datos){
                     if (id == articulo[0]) {
-                        inventario = inventario - articulo[3];
+                        inventario +=articulo[3];
                         document.getElementById("inventario").innerHTML = inventario;
                     }
                 }
@@ -139,7 +139,7 @@ function add() {
     for (let articulo of datos){
         if(id == articulo[0]){
             articulo[3]+= cantidad;
-            articulo[4]= articulo[2]*articulo[3];
+            articulo[4] = articulo[2]*articulo[3];
             sumo = true;
         }
     }
@@ -148,13 +148,14 @@ function add() {
     }  
     document.getElementById("tabla_articulos").innerHTML = crearTabla(datos);
     var inventario = parseInt(document.querySelector('#inventario').textContent);
-                for (let articulo of datos){
-                    if (id == articulo[0]) {
-                        console.log(articulo[3]);
-                        inventario = inventario - articulo[3];
-                        document.getElementById("inventario").innerHTML = inventario;
-                    }
-                }
+    for (let articulo of datos){
+        if (id == articulo[0]) {
+            inventario = inventario + articulo[3];
+            console.log(articulo[3]);
+            console.log(inventario);
+        }
+    }
+    buscar_juego(id);
 }
 
 function crearTabla(lista) {
