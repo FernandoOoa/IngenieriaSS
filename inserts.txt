@@ -41,7 +41,7 @@ VALUES
 ('4', '5', '2023/03/23', '27191204922', 'completado'),
 ('5', '3', '2023/04/01', '38170499131', 'en proceso');
 
-INSERT INTO JuegosCompra(idJuegoCompra,idJuego, folioCompra, cantidad, precioCompra)
+INSERT INTO JuegosCompra(idJuegosCompra,idJuego, folioCompra, cantidad, precioCompra)
 VALUES
 ('1','2', '1', '500','1100.00'),
 ('2','6', '1', '30','180.00'),
