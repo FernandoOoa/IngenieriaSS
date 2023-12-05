@@ -1,12 +1,33 @@
+
+const fecha = new Date().toLocaleDateString();
+document.getElementById("fecha").innerHTML = `Fecha: ${fecha}`;
+//----------------------------------------------------------------//
+buscar_folio();
+function buscar_folio() {
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                document.getElementById("folio_compra").innerHTML = xhr.responseText;
+            } else {
+                console.log("Error: " + xhr.status);
+            }
+        }
+    };
+
+
+    xhr.open("POST", '../php/Consulta_no_folio_compra.php', true);
+    xhr.send();
+}
+//----------------------------------------------------------------------------------//
 let isVisible = false;
 let datos = [];
 toggleDiv();
 function toggleDiv(isVisible) {
   document.getElementById("lo_de_Juegos").style.display = isVisible ? "block" : "none";
 }
-const fecha = new Date().toLocaleDateString();
-document.getElementById("fecha").innerHTML = `Fecha: ${fecha}`;
-//---------------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------------//
 select_empleado();
 function select_empleado() {
     var xhr = new XMLHttpRequest();
@@ -37,25 +58,6 @@ function select_empleado() {
 }
 
 //---------------------------------------------------------------------------------//
-buscar_folio();
-function buscar_folio() {
-    var xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                document.getElementById("folio_venta").innerHTML = xhr.responseText;
-            } else {
-                console.log("Error: " + xhr.status);
-            }
-        }
-    };
-
-
-    xhr.open("POST", '../php/Consulta_no_folio_venta.php', true);
-    xhr.send();
-}
-//----------------------------------------------------------------------------------//
 function buscar_empleado(consulta) {
     var xhr = new XMLHttpRequest();
 
@@ -98,7 +100,7 @@ function buscar_juego(idJuego) {
                 cantidad.addEventListener('input', function () {
                     var valor = cantidad.value;
                     console.log("valor:" + valor)
-                    if (valor < inventario && valor > 0 && valor != '') {
+                    if (valor <= 10000-inventario && valor > 0 && valor != '') {
                         isVisible = true;
                     }
                     else {
@@ -115,7 +117,7 @@ function buscar_juego(idJuego) {
     var formData = new FormData();
     formData.append('idJuego', idJuego);
 
-    xhr.open("POST", '../php/Juego_consulta_venta.php', true);
+    xhr.open("POST", '../php/Juego_consulta_compra.php', true);
     xhr.send(formData);
 }
 
@@ -218,25 +220,4 @@ function guardar() {
     console.log(datos);
     addVenta(fecha, folio, idempleado, datos);
 
-}
-function addVenta(fecha,folio,idempleado,datos) {
-    var xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                document.getElementById("tabla_articulos").innerHTML = xhr.responseText;
-            } else {
-                console.log("Error: " + xhr.status);
-            }
-        }
-    };
-
-    var formData = new FormData();
-    formData.append('fecha', fecha);
-    formData.append('folio', folio);
-    formData.append('idempleado', idempleado);
-    formData.append('datos', JSON.stringify(datos));
-    xhr.open("POST", '../php/Venta.php', true);
-    xhr.send(formData);
 }
