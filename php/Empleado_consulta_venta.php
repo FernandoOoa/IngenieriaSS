@@ -17,7 +17,7 @@ if (mysqli_num_rows($resultado) > 0) {
     while ($fila = mysqli_fetch_assoc($resultado)) {
         $salida .= "
         <tr>
-            <td>" . $fila['nss'] . "</td>
+            <td id='idempleado'>" . $fila['nss'] . "</td>
             <td>" . $fila['nombre'] . "</td>
             </tr>";
     }

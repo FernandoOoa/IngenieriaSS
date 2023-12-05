@@ -50,7 +50,7 @@ CREATE TABLE Franquicias(
 CREATE TABLE Compras(
 	folioCompra int NOT NULL AUTO_INCREMENT,
 	idProveedor int NOT NULL,
-	fecha date NOT NULL,
+	fecha varchar(10) NOT NULL,
 	nss bigint NOT NULL,
 	estado varchar(10),
 	
@@ -75,8 +75,8 @@ CREATE TABLE Pedidos(
 	folioPedido int NOT NULL AUTO_INCREMENT,
 	idFranquicia int NOT NULL,
 	nss bigint NOT NULL,
-	fecha date NOT NULL,
-	fechaFinal date,
+	fecha varchar(10) NOT NULL,
+	fechaFinal varchar(10),
 	estado varchar(10) NOT NULL,
 
 	PRIMARY KEY(folioPedido),
@@ -96,7 +96,7 @@ CREATE TABLE JuegosPedido(
 CREATE TABLE Ventas(
 	folioVenta int NOT NULL AUTO_INCREMENT,
 	nss bigint NOT NULL,
-	fecha date NOT NULL,
+	fecha varchar(10) NOT NULL,
 
 	PRIMARY KEY(folioVenta),
 	FOREIGN KEY(nss) REFERENCES Empleados(nss)

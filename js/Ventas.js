@@ -89,9 +89,7 @@ function buscar_juego(idJuego) {
                 var inventario = parseInt(document.querySelector('#inventario').textContent);
                 for (let articulo of datos){
                     if (id == articulo[0]) {
-                        console.log(articulo[3]);
                         inventario = inventario - articulo[3];
-                        console.log(inventario);
                         document.getElementById("inventario").innerHTML = inventario;
                     }
                 }
@@ -99,7 +97,6 @@ function buscar_juego(idJuego) {
                 cantidad.addEventListener('input', function () {  
                     const inventario = parseInt(document.querySelector('#inventario').textContent);
                     var valor = cantidad.value;
-                    console.log(valor,inventario);
                     if (valor > 0 && valor < inventario) {
                         isVisible = true;
                     }
@@ -196,10 +193,42 @@ function crearTabla(lista) {
   stringTabla += filacalculoTotal;
 
   // Construct the buttons row
-  const filabotones = `<tr><td></td><td></td><td></td><td><a class="btn btn-bd-light" type="button" href='Venta.html'>Cancelar</a></td><td><button class="btn btn-primary" type="submit">Guardar</button></td></tr>`;
+  const filabotones = `<tr><td></td><td></td><td></td><td><a class="btn btn-bd-light" type="button" href='Venta.html'>Cancelar</a></td><td><button class="btn btn-primary" onclick="guardar()">Guardar</button></td></tr>`;
   stringTabla += filabotones;
 
   // Close the table and return the HTML string
   stringTabla += "</tbody></table>";
   return stringTabla;
+}
+
+function guardar() {
+    console.log(fecha);
+    const folio = parseInt(document.getElementById('folio_venta').innerText);
+    console.log(folio);
+    const idempleado = parseInt(document.getElementById('idempleado').innerHTML);
+    console.log(idempleado);
+    console.log(datos);
+    addVenta(fecha, folio, idempleado, datos);
+
+}
+function addVenta(fecha,folio,idempleado,datos) {
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                document.getElementById("tabla_articulos").innerHTML = xhr.responseText;
+            } else {
+                console.log("Error: " + xhr.status);
+            }
+        }
+    };
+
+    var formData = new FormData();
+    formData.append('fecha', fecha);
+    formData.append('folio', folio);
+    formData.append('idempleado', idempleado);
+    formData.append('datos', JSON.stringify(datos));
+    xhr.open("POST", '../php/Venta.php', true);
+    xhr.send(formData);
 }
