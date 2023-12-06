@@ -23,6 +23,6 @@ function select_empleado() {
     };
 
 
-    xhr.open("POST", '../php/Proveedor_nombre.php', true);
+    xhr.open("POST", '../php/Empleado_nombre.php', true);
     xhr.send();
 }
