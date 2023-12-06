@@ -3,17 +3,23 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: rebeccapurple;
+    background-image: url(../css/fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
+label{
+    color: #EEF4FF; 
+}
 
 .Titulo {
     text-align: center;
-    background-color: #ccc;
+    background-color: #8166ed;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 2vw;
@@ -38,7 +44,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .contenedor-sombreado {
-    background-color: #fff;
+    background-color: #3a08f18c;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 2vw;
     border-radius: 8px;
@@ -120,25 +126,25 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 /* Resaltar celda al pasar el cursor sobre ella */
 .tabla-bonita tbody td:hover {
-    background-color: #ffcc00;
+    background-color: #ff0095;
     /* Cambia el color al pasar el cursor */
 }
 
 /* Resaltar celda cuando está seleccionada o enfocada */
 .tabla-bonita tbody td:focus {
-    background-color: #ffcc00;
+    background-color: #ff00aa;
     /* Cambia el color cuando está seleccionada */
 }
 
 
 :root {
 
-    --input-color: #0052f7a8;
+    --input-color: #00f721a8;
     --input-border: #CDD9ED;
     --input-background: #fff;
     --input-placeholder: #CBD1DC;
 
-    --input-border-focus: #275EFE;
+    --input-border-focus: #27fe40;
 
     --group-color: var(--input-color);
     --group-border: var(--input-border);
@@ -146,7 +152,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
     --group-color-focus: #fff;
     --group-border-focus: var(--input-border-focus);
-    --group-background-focus: #678EFE;
+    --group-background-focus: #67fe6a;
 
 }
 
