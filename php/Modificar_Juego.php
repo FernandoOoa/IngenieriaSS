@@ -28,7 +28,7 @@ $cantidad = $fila['cantidad'];
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="Inicio_Sesion.html">JuegosCOM</a>
+            <a class="navbar-brand" href="../html/Inicio_Sesion.html">JuegosCOM</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,8 +40,8 @@ $cantidad = $fila['cantidad'];
                             Empleados
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Empleado.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Consulta_Empleado.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="../html/Empleado.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="../html/Consulta_Empleado.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -49,8 +49,8 @@ $cantidad = $fila['cantidad'];
                             Juegos
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Juego.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Consulta_Juego.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="../html/Juego.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="../html/Consulta_Juego.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -58,8 +58,8 @@ $cantidad = $fila['cantidad'];
                             Pedidos
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Pedido.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Consulta_Pedido.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="../html/Pedido.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="../html/Consulta_Pedido.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -68,8 +68,8 @@ $cantidad = $fila['cantidad'];
                             Proveedor
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Proveedor.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Consulta_Proveedor.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="../html/Proveedor.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="../html/Consulta_Proveedor.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -77,8 +77,8 @@ $cantidad = $fila['cantidad'];
                             Franquicias
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Franquicia.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Consulta_Franquicia.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="../html/Franquicia.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="../html/Consulta_Franquicia.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -86,8 +86,8 @@ $cantidad = $fila['cantidad'];
                             Ventas
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Venta.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Consulta_venta.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="../html/Venta.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="../html/Consulta_venta.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -95,8 +95,8 @@ $cantidad = $fila['cantidad'];
                             Compras
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Compra.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="Consulta_Compra.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="../html/Compra.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="../html/Consulta_Compra.html">Consultar</a></li>
                         </ul>
                     </li>
                 </ul>
