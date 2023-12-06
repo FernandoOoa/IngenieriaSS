@@ -89,7 +89,7 @@
             </div>
         </div>
     </nav>
-    <div class="columna-central">
+     <div class="columna-central">
         <div class="contenedor-sombreado">
             <div style="justify-content: center; width: 100%; display: flex;">
                 <section class="Titulo">
@@ -97,129 +97,53 @@
                 </section>
             </div>
             <br />
-            <form action="procesar-venta.php" method="post" class="row g-3 needs-validation" novalidate>
-                <div class="row mb-3">
-                    <label for="inputEmail3" class="col-sm-1 col-form-label">Fecha:</label>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control form-field" id="fecha" readonly>
+            <label id = "fecha"></label>
+            </br>	
+            <label>No. folio <label id = "folio_pedido"></label></label> 
+            <br />
+			<br />
+				<div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">Fecha de entrega:</label>
+                    <div class="col-sm-10">
+						<input type="text" class="form-control form-field" name="Fecha_Entrega" placeholder="DD/MM/AAAA" required>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label for="inputEmail3" class="col-sm-1 col-form-label">Folio venta:</label>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control form-field" id="folio" readonly>
+            <br />
+                <div class="row mb-12">
+                    <label class="col-sm-2 col-form-label">Id del empleado:</label>
+                    <div class="col-sm-10">
+                        <div id="select_empleado"></div>
                     </div>
                 </div>
-                <br /><br />
-                <div class="row mb-3">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Id del empleado:</label>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control form-field" id="id_Empleado">
+                
+                <div id="contenido_empleado"></div>
+                
+				<div class="row mb-12">
+                    <label class="col-sm-2 col-form-label">Id de franquicia:</label>
+                    <div class="col-sm-10">
+                        <div id="select_franquicia"></div>
                     </div>
                 </div>
-                <table class="tabla-bonita">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Juan</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br />
-                <form action="procesar-busqueda-juegos.php" method="post">
-                    <div class="row mb-3">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">Fecha de entrega:</label>
-                        <div class="col-sm-1">
-                            <input type="text" class="form-control form-field" id="id_Empleado">
-                        </div>
-                    </div>
-
-                </form>
+				
+			    <div id="contenido_franquicia"></div>
+				
+                <div id="lo_de_Juegos">
+                <h2>Juegos</h2>
                 <br />
                 <div class="row mb-3">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Id de franquicia:</label>
-                    <div class="col-sm-1">
-                        <input type="text" class="form-control form-field" id="id_Empleado">
-                    </div>
-                </div>
-                <table class="tabla-bonita">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Accion</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>--------</td>
-                            <td>--------</td>
-                            <td><button type="button" class="btn btn-primary">Añadir</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br />
+					<label for="inputEmail3" class="col-sm-1 col-form-label">Id juego:</label>
+					<div class="col-sm-4">
+					<input type="number" class="form-control form-field" id="idJuego">
+					</div>
+				</div>
                 <h2>Resultados de la búsqueda</h2>
-                <table class="tabla-bonita">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Clasificacion</th>
-                            <th>Precio C/U</th>
-                            <th>Inventario</th>
-                            <th>Cantidad</th>
-                            <th>Accion</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <td>2</td>
-                        <td>Halo</td>
-                        <td>RPG</td>
-                        <td>5000</td>
-                        <td>50</td>
-                        <td><input type="number" name="cantidad-1" value="3"></td>
-                        <td><button type="button" class="btn btn-primary">Añadir</button></td>
-                    </tbody>
-                </table>
-
-                <h2>Carrito</h2>
-                <table class="tabla-bonita">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Cantidad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Super Mario Odyssey</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>The Legend of Zelda: Breath of the Wild</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><button class="btn btn-bd-light" type="button">Cancelar</button></td>
-                            <td><button class="btn btn-primary" type="submit">Guardar</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>
+                <div id="contenido_juego"></div>
+                </div>
+                <div id="tabla_articulos"></div>
         </div>
     </div>
 </body>
-<script src="../js/ComplementoBss.js"></script>
 
+<script src="../js/ComplementoBss.js"></script>
+<script src="../js/Pedidos.js"></script>
 </html>

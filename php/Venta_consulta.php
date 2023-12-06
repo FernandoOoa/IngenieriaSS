@@ -37,13 +37,13 @@ if ($_POST['consulta'] != null) {
         <th>Importe</th>
         </thead>
         <tbody>";
-        $cont = 1;
+        $cont = 0.0;
         $total = 0.0;
         $importe = 0.0;
         while ($fila = mysqli_fetch_assoc($resultado)) {
             $importe = (float)$fila['Precio'] * (float)$fila['Cantidad'];
             $total += $importe;
-            if ($cont == 1) {
+            if ($cont <= 1) {
                 $salida .= "<tr>
             <td>" . $fila['folio'] . "</td>
             <td>" . $fila['nss'] . "</td>

@@ -151,7 +151,7 @@ $contrasena = $fila['contraseña'];
                 <div class="col-md-12 position-relative">
                     <label for="Radiobutons" class="form-label">Estado:</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="estado_empleado" name="inlineRadio1" value="Activo" required>
+                        <input class="form-check-input" type="radio" name="estado_empleado" name="inlineRadio1" value="Activo">
                         <label class="form-check-label" for="inlineRadio1">Activo</label>
                     </div>
                     <div class="form-check form-check-inline">

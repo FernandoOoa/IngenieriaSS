@@ -134,8 +134,6 @@ function add() {
     const precio = parseInt(document.querySelector('#precio').textContent);
     //const inventario = parseInt(document.querySelector('#inventario').textContent);
     const cantidad = parseInt(document.querySelector('#numero_juegos').value);
-    var idproveedor = parseInt(document.querySelector('#idproveedor').textContent);
-    console.log(idproveedor);
     var sumo = false;
     for (let articulo of datos){
         if(id == articulo[0]){
@@ -145,7 +143,7 @@ function add() {
         }
     }
     if (sumo == false){
-        datos.push([id, nombre, precio, cantidad,idproveedor]);
+        datos.push([id, nombre, precio, cantidad]);
     }  
     document.getElementById("tabla_articulos").innerHTML = crearTabla(datos);
     var inventario = parseInt(document.querySelector('#inventario').textContent);
@@ -212,7 +210,7 @@ function crearTabla(lista) {
 }
 
 function guardar() {
-    const folio = parseInt(document.getElementById('folio_compra').innerText);
+    const folio = parseInt(document.getElementById('folio_venta').innerText);
     const idempleado = parseInt(document.getElementById('idempleado').innerHTML);
     addCompra(fecha, folio, idempleado, datos);
 }

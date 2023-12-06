@@ -38,3 +38,4 @@ if (mysqli_num_rows($resultado) > 0) {
 }
 echo $salida;
 mysqli_close($conexion);
+?>

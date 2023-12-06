@@ -182,8 +182,8 @@ $cantidad = $fila['cantidad'];
                 </div>
                 <div class="col-md-12 position-relative">
                     <label for="validationTooltip02" class="form-label">Estado:</label>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="estado_juego" name="inlineRadio1" value="Disponible" required>
+					<div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="estado_juego" name="inlineRadio1" value="Disponible">
                         <label class="form-check-label" for="inlineRadio1">Disponible</label>
                     </div>
                     <div class="form-check form-check-inline">
