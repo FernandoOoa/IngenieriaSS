@@ -57,13 +57,13 @@ VALUES
 ('4', '5', '38170499131', '02/03/2023', '20/03/2023', 'finalizado'),
 ('5', '3', '66131894500', '08/03/2023', '24/03/2023', 'finalizado');
 
-INSERT INTO JuegosPedido(idJuego, folioPedido, cantidad)
+INSERT INTO JuegosPedido(idJuegosPedido, idJuego, folioPedido, cantidad)
 VALUES
-('5', '1', '100'),
-('2', '2', '300'),
-('1', '3', '50'),
-('4', '4', '320'),
-('3', '5', '280');
+('1','5', '1', '100', '429.99'),
+('2','2', '2', '300', '1449.99'),
+('3','1', '3', '50', '1419.99'),
+('4','4', '4', '320', '999.99'),
+('5','3', '5', '280', '929.99');
 
 INSERT INTO Ventas(folioVenta, nss, fecha)
 VALUES

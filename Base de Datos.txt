@@ -85,9 +85,11 @@ CREATE TABLE Pedidos(
 );
 
 CREATE TABLE JuegosPedido(
+	idJuegoPedido int NOT NULL AUTO_INCREMENT,
 	folioPedido int NOT NULL,
 	idJuego int NOT NULL,
 	cantidad int NOT NULL,
+	precioVenta float NOT NULL,
 
 	FOREIGN KEY(folioPedido) REFERENCES Pedidos(folioPedido),
 	FOREIGN KEY(idJuego) REFERENCES Juegos(idJuego)
