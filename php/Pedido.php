@@ -7,8 +7,9 @@ $idFranquicia = $_POST['idfranquicia'];
 $fecha = $_POST['fecha'];
 $data = json_decode($_POST['datos'], true); // Decodificar el JSON para obtener un array asociativo
 $estado = "En proceso";
+$fechaentrega = date("d/m/Y", strtotime($_POST['fecha_entrega']));
 echo $idFranquicia;
-$query = "INSERT INTO pedidos VALUES ('$folio', '$idFranquicia', '$idempleado', '$fecha', 'fecha_entrega', '$estado')";
+$query = "INSERT INTO pedidos VALUES ('$folio', '$idFranquicia', '$idempleado', '$fecha', '$fechaentrega', '$estado')";
 if (!mysqli_query($conexion, $query)) {
     echo "<script>alert('No se pudo añadir');</script>";
     return;
