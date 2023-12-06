@@ -150,7 +150,7 @@ function buscar_juego(idJuego) {
                 cantidad.addEventListener('input', function () {
                     var valor = cantidad.value;
                     console.log("valor:" + valor)
-                    if (valor < inventario && valor > 0 && valor != '') {
+                    if (valor <= inventario && valor > 0 && valor != '') {
                         isVisible = true;
                     }
                     else {
@@ -265,16 +265,10 @@ function crearTabla(lista) {
 }
 
 function guardar() {
-    console.log(fecha);
 	const fechaEntrega = document.getElementById('fecha_entrega').value;
-	console.log(fechaEntrega);
     const folio = parseInt(document.getElementById('folio_pedido').innerText);
-    console.log(folio);
     const idempleado = parseInt(document.getElementById('idempleado').innerHTML);
-    console.log(idempleado);
 	const idFranquicia = parseInt(document.getElementById('ids_franquicias').value);
-    console.log(idFranquicia);
-    console.log(datos);
     addPedido(fecha, fechaEntrega, folio, idempleado,idFranquicia, datos);
 
 }

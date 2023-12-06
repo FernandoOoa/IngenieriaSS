@@ -98,7 +98,7 @@ function buscar_juego(idJuego) {
                 cantidad.addEventListener('input', function () {
                     var valor = cantidad.value;
                     console.log("valor:" + valor)
-                    if (valor < inventario && valor > 0 && valor != '') {
+                    if (valor <= inventario && valor > 0 && valor != '') {
                         isVisible = true;
                     }
                     else {
