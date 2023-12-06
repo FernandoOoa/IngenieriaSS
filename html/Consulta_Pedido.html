@@ -96,55 +96,16 @@
                     <h1>Consultar Pedido</h1>
                 </section>
             </div>
-            <br />
+            <br/>
             <div class="row g-3 align-items-center">
                 <div class="col-auto"><label for="nss-empleado">Buscar:</label></div>
-                <div class="col-5"><input type="text" class="form-control form-field" id="nss-empleado"
-                        placeholder="Introducir id"></div>
+                <div class="col-5"><input type="number" class="form-control form-field" id="idPedido" placeholder="Id del juego"></div>
             </div>
-            <table class="tabla-bonita">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Franquicia</th>
-                        <th>Fecha</th>
-                        <th>Fecha de Entrega</th>
-                        <th>Empleado</th>
-                        <th>Juego</th>
-                        <th>Estado</th>
-                        <th>Cantidad</th>
-                        <th>Modificar</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Celda 1</td>
-                        <td>Celda 2</td>
-                        <td>Celda 3</td>
-                        <td>Celda 4</td>
-                        <td>Celda 5</td>
-                        <td>Celda 6</td>
-                        <td>Celda 7</td>
-                        <td>Celda 8</td>
-                        <td><button class="btn btn-dark" id="Modificar">Modificar</button></td>
-                    </tr>
-                    <tr>
-                        <td>Celda 1</td>
-                        <td>Celda 2</td>
-                        <td>Celda 3</td>
-                        <td>Celda 4</td>
-                        <td>Celda 5</td>
-                        <td>Celda 6</td>
-                        <td>Celda 7</td>
-                        <td>Celda 8</td>
-                        <td><button class="btn btn-dark" id="Modificar">Modificar</button></td>
-                    </tr>
-                </tbody>
-            </table>
+			<div id="contenido"></div>
         </div>
     </div>
 </body>
 <script src="../js/ComplementoBss.js"></script>
+<script src="../js/Pedido.js"></script>
 
 </html>
