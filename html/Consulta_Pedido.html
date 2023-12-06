@@ -89,61 +89,62 @@
             </div>
         </div>
     </nav>
-     <div class="columna-central">
+    <div class="columna-central">
         <div class="contenedor-sombreado">
             <div style="justify-content: center; width: 100%; display: flex;">
                 <section class="Titulo">
-                    <h1>Agregar Pedido</h1>
+                    <h1>Consultar Pedido</h1>
                 </section>
             </div>
             <br />
-            <label id = "fecha"></label>
-            </br>	
-            <label>No. folio <label id = "folio_pedido"></label></label> 
-            <br />
-			<br />
-				<div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">Fecha de entrega:</label>
-                    <div class="col-sm-10">
-						<input type="date" class="form-control form-field" id="fecha_entrega" placeholder="DD/MM/AAAA" max="" required>
-                    </div>
-                </div>
-            <br />
-                <div class="row mb-12">
-                    <label class="col-sm-2 col-form-label">Id del empleado:</label>
-                    <div class="col-sm-10">
-                        <div id="select_empleado"></div>
-                    </div>
-                </div>
-                
-                <div id="contenido_empleado"></div>
-                
-				<div class="row mb-12">
-                    <label class="col-sm-2 col-form-label">Id de franquicia:</label>
-                    <div class="col-sm-10">
-                        <div id="select_franquicia"></div>
-                    </div>
-                </div>
-				
-			    <div id="contenido_franquicia"></div>
-				
-                <div id="lo_de_Juegos">
-                <h2>Juegos</h2>
-                <br />
-                <div class="row mb-3">
-					<label for="inputEmail3" class="col-sm-1 col-form-label">Id juego:</label>
-					<div class="col-sm-4">
-					<input type="number" class="form-control form-field" id="idJuego">
-					</div>
-				</div>
-                <h2>Resultados de la búsqueda</h2>
-                <div id="contenido_juego"></div>
-                </div>
-                <div id="tabla_articulos"></div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto"><label for="nss-empleado">Buscar:</label></div>
+                <div class="col-5"><input type="text" class="form-control form-field" id="nss-empleado"
+                        placeholder="Introducir id"></div>
+            </div>
+            <table class="tabla-bonita">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Franquicia</th>
+                        <th>Fecha</th>
+                        <th>Fecha de Entrega</th>
+                        <th>Empleado</th>
+                        <th>Juego</th>
+                        <th>Estado</th>
+                        <th>Cantidad</th>
+                        <th>Modificar</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Celda 1</td>
+                        <td>Celda 2</td>
+                        <td>Celda 3</td>
+                        <td>Celda 4</td>
+                        <td>Celda 5</td>
+                        <td>Celda 6</td>
+                        <td>Celda 7</td>
+                        <td>Celda 8</td>
+                        <td><button class="btn btn-dark" id="Modificar">Modificar</button></td>
+                    </tr>
+                    <tr>
+                        <td>Celda 1</td>
+                        <td>Celda 2</td>
+                        <td>Celda 3</td>
+                        <td>Celda 4</td>
+                        <td>Celda 5</td>
+                        <td>Celda 6</td>
+                        <td>Celda 7</td>
+                        <td>Celda 8</td>
+                        <td><button class="btn btn-dark" id="Modificar">Modificar</button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>
-
 <script src="../js/ComplementoBss.js"></script>
-<script src="../js/Pedidos.js"></script>
+
 </html>
