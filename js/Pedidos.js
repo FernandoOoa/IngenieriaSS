@@ -266,7 +266,7 @@ function crearTabla(lista) {
 
 function guardar() {
     console.log(fecha);
-	const fechaEntrega = document.getElementById('fecha_entrega').innerText;
+	const fechaEntrega = document.getElementById('fecha_entrega').value;
 	console.log(fechaEntrega);
     const folio = parseInt(document.getElementById('folio_pedido').innerText);
     console.log(folio);
