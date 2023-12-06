@@ -65,15 +65,39 @@ if ($_POST['consulta'] != null) {
         $total2 = $total + $calculoiva;
 
         $salida .= "<tr>
-                        <td colspan='9'>Sub Total</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Sub Total</td>
                         <td>" . $total . "</td>
                     </tr>
                     <tr>
-                        <td colspan='9'>IVA</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>IVA</td>
                         <td>" . $calculoiva . "</td>
                     </tr>
                     <tr>
-                        <td colspan='9'>Total</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Total</td>
                         <td>" . $total2 . "</td>
                     </tr>
                 </tbody>

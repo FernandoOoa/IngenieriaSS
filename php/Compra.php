@@ -4,9 +4,10 @@ include "conexion.php";
 $folio = $_POST['folio'];
 $idempleado = $_POST['idempleado'];
 $fecha = $_POST['fecha'];
+$estado = "En proceso";
 $data = json_decode($_POST['datos'], true); // Decodificar el JSON para obtener un array asociativo
 
-$query = "INSERT INTO compras VALUES ('$folio', '$idempleado', '$fecha')";
+$query = "INSERT INTO compras VALUES ('$folio', '$fecha', '$idempleado','$estado')";
 if (!mysqli_query($conexion, $query)) {
     echo "<script>alert('No se pudo añadir');</script>";
     return;
@@ -15,9 +16,10 @@ if (!mysqli_query($conexion, $query)) {
 foreach ($data as $value) {
     $idJuego = $value[0]; // Acceder a los valores del array asociativo
     $cantidad = $value[3];
-    $precioVenta = $value[2];
-
-    $salida = "INSERT INTO juegosVenta VALUES ('', '$folio', '$idJuego', '$cantidad', '$precioVenta')";
+    $precio = $value[2];
+    $idproveedor = $value[4];
+    echo $idproveedor;
+    $salida = "INSERT INTO juegosCompra VALUES ('', '$idJuego', '$idproveedor', '$folio', '$cantidad','$precio')";
     if (!mysqli_query($conexion, $salida)) {
         echo "<script>alert('No se pudo añadir');</script>";
         return;
@@ -27,7 +29,7 @@ foreach ($data as $value) {
     $consulta = mysqli_query($conexion, $query);
     $obj = mysqli_fetch_object($consulta);
     $existencia = intval($obj->cantidad);
-    $existencia -= $cantidad;
+    $existencia += $cantidad;
 
     $query = "UPDATE juegos SET cantidad = '$existencia' WHERE idJuego = '$idJuego'";
     mysqli_query($conexion, $query);
