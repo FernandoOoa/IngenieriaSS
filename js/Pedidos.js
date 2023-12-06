@@ -6,24 +6,6 @@ function toggleDiv(isVisible) {
 }
 const fecha = new Date().toLocaleDateString();
 document.getElementById("fecha").innerHTML = `Fecha: ${fecha}`;
-var inputFecha = document.getElementById("fecha_entrega");
-
-    // Agregar un evento oninput para validar la fecha
-    inputFecha.addEventListener("input", function() {
-      var fechaSeleccionada = new Date(this.value); // Obtener la fecha ingresada por el usuario
-      var fechaActual = new Date(); // Obtener la fecha actual
-
-      // Verificar si la fecha seleccionada es anterior a la fecha actual
-      if (fechaSeleccionada < fechaActual) {
-        // Si la fecha seleccionada es anterior, restablecer a la fecha actual
-        var dd = String(fechaActual.getDate()).padStart(2, '0');
-        var mm = String(fechaActual.getMonth() + 1).padStart(2, '0'); // Enero es 0
-        var yyyy = fechaActual.getFullYear();
-
-        var fechaHoy = yyyy + '-' + mm + '-' + dd;
-        inputFecha.value = fechaHoy;
-        }
-    });
 //---------------------------------------------------------------------------------//
 
 select_empleado();
@@ -290,7 +272,7 @@ function guardar() {
     console.log(folio);
     const idempleado = parseInt(document.getElementById('idempleado').innerHTML);
     console.log(idempleado);
-	const idFranquicia = parseInt(document.getElementById('ids_franquicias').innerHTML);
+	const idFranquicia = parseInt(document.getElementById('idfranquicia').innerHTML);
     console.log(idFranquicia);
     console.log(datos);
     addPedido(fecha, folio, idempleado, datos);
