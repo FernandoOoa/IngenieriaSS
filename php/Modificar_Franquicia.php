@@ -24,10 +24,11 @@ $direccion = $fila['direccion'];
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">JuegosCOM</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="Inicio_Sesion.html">JuegosCOM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -37,8 +38,8 @@ $direccion = $fila['direccion'];
                             Empleados
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../html/Empleado.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="../html/Consulta_Empleado.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="Empleado.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="Consulta_Empleado.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -46,8 +47,8 @@ $direccion = $fila['direccion'];
                             Juegos
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../html/Juego.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="../html/Consulta_Juego.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="Juego.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="Consulta_Juego.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -55,18 +56,18 @@ $direccion = $fila['direccion'];
                             Pedidos
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../html/Pedido.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="../html/Actualizar_Pedido.html">Actualizar</a></li>
-                            <li><a class="dropdown-item" href="../html/Consulta_Pedido.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="Pedido.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="Consulta_Pedido.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Proveedor
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../html/Proveedor.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="../html/Consulta_Proveedor.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="Proveedor.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="Consulta_Proveedor.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -74,8 +75,8 @@ $direccion = $fila['direccion'];
                             Franquicias
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../html/Franquicia.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="../html/Consulta_Franquicia.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="Franquicia.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="Consulta_Franquicia.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -83,8 +84,8 @@ $direccion = $fila['direccion'];
                             Ventas
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../html/Venta.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="../html/Consulta_venta.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="Venta.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="Consulta_venta.html">Consultar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -92,8 +93,8 @@ $direccion = $fila['direccion'];
                             Compras
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../html/Compra.html">Agregar</a></li>
-                            <li><a class="dropdown-item" href="../html/Consulta_Compra.html">Consultar</a></li>
+                            <li><a class="dropdown-item" href="Compra.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="Consulta_Compra.html">Consultar</a></li>
                         </ul>
                     </li>
                 </ul>
