@@ -218,7 +218,6 @@ function guardar() {
     console.log(idempleado);
     console.log(datos);
     addVenta(fecha, folio, idempleado, datos);
-
 }
 function addVenta(fecha,folio,idempleado,datos) {
     var xhr = new XMLHttpRequest();
@@ -226,7 +225,8 @@ function addVenta(fecha,folio,idempleado,datos) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                document.getElementById("tabla_articulos").innerHTML = xhr.responseText;
+                alert("Veta exitosa");
+                window.location.reload();
             } else {
                 console.log("Error: " + xhr.status);
             }

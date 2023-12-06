@@ -222,7 +222,8 @@ function addCompra(fecha,folio,idempleado,datos) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                document.getElementById("tabla_articulos").innerHTML = xhr.responseText;
+                alert("Compra exitosa");
+                window.location.reload();
             } else {
                 console.log("Error: " + xhr.status);
             }

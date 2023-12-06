@@ -284,7 +284,8 @@ function addPedido(fecha, fechaEntrega,folio,idempleado, idFranquicia, datos) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                document.getElementById("tabla_articulos").innerHTML = xhr.responseText;
+                alert("Pedido exitoso");
+                window.location.reload();
             } else {
                 console.log("Error: " + xhr.status);
             }
