@@ -272,10 +272,10 @@ function guardar() {
     console.log(folio);
     const idempleado = parseInt(document.getElementById('idempleado').innerHTML);
     console.log(idempleado);
-	const idFranquicia = parseInt(document.getElementById('idfranquicia').innerHTML);
+	const idFranquicia = parseInt(document.getElementById('ids_franquicias').value);
     console.log(idFranquicia);
     console.log(datos);
-    addPedido(fecha, folio, idempleado, datos);
+    addPedido(fecha, fechaEntrega, folio, idempleado,idFranquicia, datos);
 
 }
 function addPedido(fecha, fechaEntrega,folio,idempleado, idFranquicia, datos) {

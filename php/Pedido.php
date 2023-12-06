@@ -2,11 +2,12 @@
 include "conexion.php";
 
 $folio = $_POST['folio'];
-$idempleado = $_POST['idFranquicia'];
+$idempleado = $_POST['idempleado'];
+$idFranquicia = $_POST['idfranquicia'];
 $fecha = $_POST['fecha'];
 $data = json_decode($_POST['datos'], true); // Decodificar el JSON para obtener un array asociativo
-$estado = "en proceso";
-
+$estado = "En proceso";
+echo $idFranquicia;
 $query = "INSERT INTO pedidos VALUES ('$folio', '$idFranquicia', '$idempleado', '$fecha', 'fecha_entrega', '$estado')";
 if (!mysqli_query($conexion, $query)) {
     echo "<script>alert('No se pudo añadir');</script>";
@@ -36,4 +37,3 @@ foreach ($data as $value) {
 
 echo "<script>alert('Pedido registrado'); window.location.reload();</script>";
 die();
-?>
